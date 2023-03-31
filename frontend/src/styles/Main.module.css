@@ -1,0 +1,17 @@
+.main {
+    height: 100vh;
+    background-image: url('../assets/background.svg');
+    background-size: 72% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: grid;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+.main_image {
+    position: relative;
+    top: 33%;
+    width: 500px;
+}
+
