@@ -1,9 +1,9 @@
 import './App.css'
 import {Routes, Route, Link} from "react-router-dom";
-import Main from './components/Main'
-import About from "./components/About";
-import Contacts from "./components/Contacts";
-import Reviews from "./components/Reviews";
+import Main from './components/application/Main'
+import About from "./components/application/About";
+import Contacts from "./components/application/Contacts";
+import Reviews from "./components/application/Reviews";
 
 function App() {
 

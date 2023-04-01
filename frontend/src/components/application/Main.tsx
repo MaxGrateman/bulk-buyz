@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../styles/Main.module.css'
-import hand from '../assets/hand.svg'
+import styles from '../../styles/Main.module.css'
+import hand from '../../assets/hand.svg'
 
 const Main = () => {
     return (
