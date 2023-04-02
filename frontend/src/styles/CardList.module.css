@@ -1,0 +1,49 @@
+.card {
+    width: 360px;
+    height: 340px;
+    background: linear-gradient(90deg, #AA00FF 0%, #816AFF 99.98%);
+    border-radius: 30px;
+    padding: 35px 15px 10px 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_image {
+    width: 150px;
+    height: 150px;
+}
+
+.label {
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-top: 40px;
+}
+
+.card_button {
+    width: 300px;
+    height: 55px;
+    background: linear-gradient(90deg, #262626 0%, #2B2B2B 100%);
+    border-radius: 35px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    font-family: 'Comfortaa', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.card_button:hover {
+    background: linear-gradient(180deg, #2c2c2c 0%, #545252 100%);
+    transition: ease-in 1s;
+}

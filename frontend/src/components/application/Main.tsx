@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../styles/Main.module.css'
 import hand from '../../assets/hand.svg'
 import Layout, {LayoutVariant} from '../layouts/Layout'
+import CardList from "../interfaces/CardList";
 
 const Main = () => {
     return (
@@ -12,6 +13,9 @@ const Main = () => {
                     backgroundPosition={'center center'}
                     backgroundRepeat={'no-repeat'}>
                 <img src={hand} alt='hand_key' className={styles.main_image}/>
+                <div className={styles.card_wrapper}>
+                    <CardList/>
+                </div>
             </Layout>
         </>
     );
