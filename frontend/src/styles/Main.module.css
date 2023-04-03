@@ -1,17 +1,17 @@
 .main_image {
     position: fixed;
-    top: 33%;
+    top: 30%;
     width: 500px;
 }
 
 .card_wrapper {
     position: absolute;
     top: 200px;
-    right: 50px;
+    right: 30px;
     max-height: 500px;
-    width: 600px;
+    width: 720px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }

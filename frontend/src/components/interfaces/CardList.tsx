@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import styles from '../../styles/CardList.module.css'
 import card_image from '../../assets/image-geo.svg'
 

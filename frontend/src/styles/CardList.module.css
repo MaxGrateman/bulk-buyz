@@ -1,12 +1,12 @@
 .card {
-    width: 360px;
+    max-width: 320px;
     height: 340px;
     background: linear-gradient(90deg, #AA00FF 0%, #816AFF 99.98%);
     border-radius: 30px;
     padding: 35px 15px 10px 15px;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }

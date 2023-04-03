@@ -15,6 +15,7 @@ const Main = () => {
                 <img src={hand} alt='hand_key' className={styles.main_image}/>
                 <div className={styles.card_wrapper}>
                     <CardList/>
+                    <CardList/>
                 </div>
             </Layout>
         </>
