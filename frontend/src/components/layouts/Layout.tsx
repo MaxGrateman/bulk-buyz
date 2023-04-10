@@ -3,6 +3,7 @@ import background_image from '../../assets/background.svg'
 
 export enum LayoutVariant {
     image = 'image',
+    white = 'white'
 }
 
 interface LayoutProps {
@@ -26,7 +27,7 @@ const Layout: FC<LayoutProps> =
        backgroundSize
      }) => {
     return (
-        <div style={{ height, background: variant === LayoutVariant.image ? `url(${background_image})` : 'white',
+        <div style={{ height, background: variant === LayoutVariant.image ? `url(${background_image})` : LayoutVariant.white,
              backgroundSize, backgroundAttachment, backgroundPosition, backgroundRepeat}}>
             {children}
         </div>
