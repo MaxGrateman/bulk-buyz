@@ -16,9 +16,7 @@
 }
 
 .contact_label {
-    font-family: 'Comfortaa', cursive;
     font-size: 46px;
-    font-style: normal;
     font-weight: 700;
     line-height: 50px;
     color: #7C64FF;
@@ -36,8 +34,6 @@
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     opacity: 0.8;
 
-    font-family: 'Comfortaa', cursive;
-    font-style: normal;
     font-weight: 700;
     font-size: 22px;
     color: #000000;

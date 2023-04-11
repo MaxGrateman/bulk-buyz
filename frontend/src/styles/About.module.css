@@ -1,0 +1,30 @@
+.about {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.about_wrapper {
+    height: 300px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.about_label {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #7C64FF;
+}
+
+.about_text {
+    font-weight: 700;
+    font-size: 22px;
+    color: #000000;
+}
