@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../styles/Contacts.module.css'
 import Layout, {LayoutVariant} from '../layouts/Layout'
 import external_link from '../../assets/external-link .svg'
-import contact_image from '../../assets/contact.png'
+import contact_image from '../../assets/contacts.svg'
 
 const Contacts = () => {
     return (

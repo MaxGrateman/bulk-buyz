@@ -2,7 +2,7 @@ import React from 'react';
 import Layout, {LayoutVariant} from "../layouts/Layout";
 import styles from '../../styles/Reviews.module.css'
 import external_link from "../../assets/external-link .svg";
-import reviews_image from '../../assets/reviews.png'
+import reviews_image from '../../assets/papers.svg'
 
 const Reviews = () => {
     return (

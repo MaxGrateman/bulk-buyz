@@ -13,7 +13,7 @@ function App() {
         <Link to="/" className="header_link">Главная</Link>
         <div></div>
         <Link to="/contacts" className="header_link">Контакты</Link>
-        <Link to="/reviews" className="header_link">Обзоры</Link>
+        <Link to="/reviews" className="header_link">Отзывы</Link>
         <Link to="/about" className="header_link">О нас</Link>
       </header>
       <Routes>

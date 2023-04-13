@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout, {LayoutVariant} from '../layouts/Layout'
 import styles from '../../styles/About.module.css'
-import about_image from '../../assets/about-image.png'
+import about_image from '../../assets/globus.svg'
 
 const About = () => {
     return (
