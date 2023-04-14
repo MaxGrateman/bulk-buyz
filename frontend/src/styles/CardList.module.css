@@ -86,3 +86,25 @@
         font-size: 52px;
     }
 }
+
+@media screen and (min-width: 3840px) {
+    .card {
+        width: 850px;
+        height: 800px;
+    }
+
+    .card_image {
+        width: 320px;
+        height: 320px;
+    }
+
+    .label {
+        font-size: 82px;
+    }
+
+    .card_button {
+        width: 580px;
+        height: 120px;
+        font-size: 62px;
+    }
+}

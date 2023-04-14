@@ -21,7 +21,6 @@
         width: 700px;
     }
     .card_wrapper {
-        top: 320px;
         width: 900px;
     }
 }
@@ -33,5 +32,16 @@
     .card_wrapper {
         top: 400px;
         width: 1300px;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .main_image {
+        top: 25%;
+        width: 1600px;
+    }
+    .card_wrapper {
+        top: 500px;
+        width: 1800px;
     }
 }
