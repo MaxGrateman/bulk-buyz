@@ -22,3 +22,25 @@
   transition: ease-in 0.1s;
 }
 
+@media screen and (min-width: 1920px) {
+  .header {
+    grid-template-columns: 150px 1fr 250px 200px 200px;
+  }
+
+  .header_link {
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .header {
+    grid-template-columns: 150px 1fr 360px 300px 260px;
+    height: 90px;
+    text-align: center;
+  }
+
+  .header_link {
+    font-size: 52px;
+  }
+}
+

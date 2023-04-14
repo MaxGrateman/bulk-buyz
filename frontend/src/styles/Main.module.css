@@ -15,3 +15,23 @@
     justify-content: space-between;
     align-items: center;
 }
+
+@media screen and (min-width: 1920px) {
+    .main_image {
+        width: 700px;
+    }
+    .card_wrapper {
+        top: 320px;
+        width: 900px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .main_image {
+        width: 900px;
+    }
+    .card_wrapper {
+        top: 400px;
+        width: 1300px;
+    }
+}
