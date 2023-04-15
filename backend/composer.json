@@ -1,0 +1,14 @@
+{
+  "name": "vendor_name/backend",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "SERG",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  }
+}
