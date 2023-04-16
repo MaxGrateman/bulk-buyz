@@ -6,7 +6,7 @@
 
 .card_wrapper {
     position: absolute;
-    top: 200px;
+    top: 100px;
     right: 30px;
     max-height: 500px;
     width: 720px;
@@ -18,20 +18,20 @@
 
 @media screen and (min-width: 1920px) {
     .main_image {
-        width: 700px;
+        width: 650px;
     }
     .card_wrapper {
-        width: 900px;
+        width: 950px;
     }
 }
 
 @media screen and (min-width: 2560px) {
     .main_image {
-        width: 900px;
+        width: 1000px;
     }
     .card_wrapper {
         top: 400px;
-        width: 1300px;
+        width: 1450px;
     }
 }
 
@@ -41,7 +41,7 @@
         width: 1600px;
     }
     .card_wrapper {
-        top: 500px;
-        width: 1800px;
+        top: 600px;
+        width: 2150px;
     }
 }

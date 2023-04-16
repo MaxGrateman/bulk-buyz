@@ -46,13 +46,13 @@
 
 @media screen and (min-width: 1920px) {
     .card {
-        width: 400px;
-        height: 420px;
+        width: 440px;
+        height: 460px;
     }
 
     .card_image {
-        width: 180px;
-        height: 180px;
+        width: 190px;
+        height: 190px;
     }
 
     .label {
@@ -67,44 +67,45 @@
 
 @media screen and (min-width: 2560px) {
     .card {
-        width: 600px;
-        height: 620px;
+        width: 680px;
+        height: 700px;
     }
 
     .card_image {
-        width: 250px;
-        height: 250px;
+        width: 290px;
+        height: 290px;
     }
 
     .label {
-        font-size: 62px;
+        font-size: 68px;
     }
 
     .card_button {
-        width: 450px;
-        height: 100px;
-        font-size: 52px;
+        width: 500px;
+        height: 110px;
+        font-size: 58px;
     }
 }
 
 @media screen and (min-width: 3840px) {
     .card {
-        width: 850px;
-        height: 800px;
+        width: 1020px;
+        height: 1000px;
+        justify-content: space-evenly;
     }
 
     .card_image {
-        width: 320px;
-        height: 320px;
+        width: 400px;
+        height: 400px;
     }
 
     .label {
-        font-size: 82px;
+        font-size: 98px;
     }
 
     .card_button {
-        width: 580px;
-        height: 120px;
-        font-size: 62px;
+        width: 780px;
+        height: 140px;
+        font-size: 78px;
     }
 }
