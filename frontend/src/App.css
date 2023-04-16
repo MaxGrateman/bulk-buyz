@@ -24,7 +24,8 @@
 
 @media screen and (min-width: 1920px) {
   .header {
-    grid-template-columns: 150px 1fr 270px 210px 210px;
+    grid-template-columns: 150px 1fr 250px 190px 190px;
+    height: 60px;
   }
 
   .header_link {

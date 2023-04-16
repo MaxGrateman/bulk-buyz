@@ -16,6 +16,12 @@
     text-align: left;
 }
 
+.about_image {
+    width: 450px;
+    height: 450px;
+    margin-top: 100px;
+}
+
 .about_label {
     font-size: 46px;
     font-weight: 700;
@@ -27,4 +33,39 @@
     font-weight: 700;
     font-size: 22px;
     color: #000000;
+}
+
+@media (min-width: 1920px) {
+    .about_label {
+        font-size: 58px;
+    }
+    .about_wrapper {
+        width: 900px;
+        height: 500px;
+    }
+    .about_text {
+        font-size: 28px;
+    }
+    .about_image {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .about_label {
+        font-size: 82px;
+    }
+    .about_wrapper {
+        width: 1600px;
+        height: 750px;
+    }
+    .about_text {
+        font-size: 46px;
+    }
+    .about_image {
+        width: 900px;
+        height: 900px;
+        margin-top: 200px;
+    }
 }

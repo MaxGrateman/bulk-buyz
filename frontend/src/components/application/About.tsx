@@ -19,7 +19,7 @@ const About = () => {
                             Кроме того, наш сайт предоставляет подробную информацию и руководства по использованию
                             смены региона в Steam.</p>
                     </div>
-                    <img src={about_image} alt='about-image' width={450} height={450} style={{marginTop: '100px'}}/>
+                    <img src={about_image} alt='about-image' className={styles.about_image}/>
                 </div>
             </Layout>
         </>
