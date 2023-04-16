@@ -17,12 +17,9 @@ const Reviews = () => {
                         </p>
                         <button className={styles.reviews_button}>
                             reviews.link
-                            <img src={external_link} alt='icon-link' width={25} height={25} style={{left: '90px', top: '5px',position: 'relative'}}/>
                         </button>
                     </div>
-
-                    <img src={reviews_image} alt='reviews-image' width={500} height={500} style={{marginTop: '100px'}}/>
-
+                    <img src={reviews_image} alt='reviews-image' className={styles.reviews_image}/>
                 </div>
             </Layout>
         </>
