@@ -8,7 +8,7 @@ const Main = () => {
     return (
         <>
             <Layout height={'100vh'} variant={LayoutVariant.image}
-                    backgroundSize={'cover'}
+                    backgroundSize={'contain'}
                     backgroundAttachment={'fixed'}
                     backgroundPosition={'center center'}
                     backgroundRepeat={'no-repeat'}>

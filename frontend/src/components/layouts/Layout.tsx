@@ -1,5 +1,5 @@
 import React, {FC, ReactElement, ReactNode} from 'react';
-import background_image from '../../assets/background.svg'
+import background_image from '../../assets/background2.svg'
 
 export enum LayoutVariant {
     image = 'image',
