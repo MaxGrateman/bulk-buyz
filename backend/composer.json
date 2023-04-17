@@ -10,5 +10,12 @@
     }
   ],
   "require": {
+    "guzzlehttp/guzzle": "^7.5",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "": ""
+    }
   }
 }
