@@ -10,7 +10,7 @@ const Main = () => {
             <Layout height={'100vh'} variant={LayoutVariant.image}
                     backgroundSize={'contain'}
                     backgroundAttachment={'fixed'}
-                    backgroundPosition={'center center'}
+                    backgroundPosition={'left left'}
                     backgroundRepeat={'no-repeat'}>
                 <img src={hand} alt='hand_key' className={styles.main_image}/>
                 <div className={styles.card_wrapper}>
