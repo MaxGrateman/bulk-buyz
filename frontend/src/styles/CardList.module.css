@@ -1,9 +1,9 @@
 .card {
     width: 320px;
-    height: 340px;
+    height: 320px;
     background: linear-gradient(90deg, #AA00FF 0%, #816AFF 99.98%);
     border-radius: 30px;
-    padding: 35px 15px 10px 15px;
+    padding: 15px 15px 15px 15px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -12,8 +12,8 @@
 }
 
 .card_image {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 }
 
 .label {
@@ -46,8 +46,8 @@
 
 @media screen and (min-width: 1920px) {
     .card {
-        width: 440px;
-        height: 460px;
+        width: 420px;
+        height: 420px;
     }
 
     .card_image {
@@ -65,10 +65,30 @@
     }
 }
 
+@media screen and (min-width: 2290px) {
+    .card {
+        width: 520px;
+        height: 520px;
+    }
+    .card_image {
+        width: 210px;
+        height: 210px;
+    }
+    .label {
+        font-size: 52px;
+    }
+    .card_button {
+        width: 400px;
+        height: 70px;
+        font-size: 46px;
+    }
+}
+
 @media screen and (min-width: 2560px) {
     .card {
-        width: 680px;
+        width: 700px;
         height: 700px;
+        border-radius: 40px;
     }
 
     .card_image {
@@ -82,30 +102,55 @@
 
     .card_button {
         width: 500px;
-        height: 110px;
+        height: 100px;
         font-size: 58px;
     }
 }
 
 @media screen and (min-width: 3840px) {
     .card {
-        width: 1020px;
-        height: 1000px;
+        width: 1120px;
+        height: 1120px;
         justify-content: space-evenly;
+        border-radius: 50px;
     }
 
     .card_image {
-        width: 400px;
-        height: 400px;
+        width: 450px;
+        height: 450px;
     }
 
     .label {
-        font-size: 98px;
+        font-size: 104px;
     }
 
     .card_button {
-        width: 780px;
-        height: 140px;
-        font-size: 78px;
+        width: 800px;
+        height: 150px;
+        font-size: 86px;
+    }
+}
+
+@media screen and (min-width: 5000px) {
+    .card {
+        width: 1520px;
+        height: 1520px;
+        justify-content: space-evenly;
+        border-radius: 50px;
+    }
+
+    .card_image {
+        width: 650px;
+        height: 650px;
+    }
+
+    .label {
+        font-size: 142px;
+    }
+
+    .card_button {
+        width: 1000px;
+        height: 200px;
+        font-size: 112px;
     }
 }

@@ -17,7 +17,7 @@ const Contacts = () => {
                             vk.link
                         </button>
                     </div>
-                    <img src={contact_image} alt='image-geo' className={styles.contact_image} width={500} height={500} style={{marginTop: '50px'}}/>
+                    <img src={contact_image} alt='image-geo' className={styles.contact_image}/>
                 </div>
             </Layout>
         </>
