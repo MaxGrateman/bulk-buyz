@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <header className="header">
-        <Link to="/" className="header_link">Главная</Link>
         <div></div>
+        <Link to="/" className="header_link">Главная</Link>
         <Link to="/contacts" className="header_link">Контакты</Link>
         <Link to="/reviews" className="header_link">Отзывы</Link>
         <Link to="/about" className="header_link">О нас</Link>

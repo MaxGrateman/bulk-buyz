@@ -12,7 +12,7 @@ const Main = () => {
                     backgroundAttachment={'fixed'}
                     backgroundPosition={'left left'}
                     backgroundRepeat={'no-repeat'}>
-                <img src={hand} alt='hand_key' className={styles.main_image}/>
+{/*                <img src={hand} alt='hand_key' className={styles.main_image}/>*/}
                 <div className={styles.card_wrapper}>
                     <CardList/>
                     <CardList/>

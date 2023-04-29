@@ -44,6 +44,7 @@
     transition: ease-in 1s;
 }
 
+/*
 @media screen and (min-width: 1920px) {
     .card {
         width: 420px;
@@ -153,4 +154,4 @@
         height: 200px;
         font-size: 112px;
     }
-}
+}*/
