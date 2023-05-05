@@ -10,7 +10,7 @@ function Header() {
                         <a href='#' className="navigation_link">Поддержка</a>
                         <a href='#' className="navigation_link">Отзывы</a>
                         <a href='#' className="navigation_link">О нас</a>
-                        <a href='#' className="navigation_link">Покупки</a>
+                        <a href='#' className="navigation_link">Мои покупки</a>
                     </nav>
                     <div className="under-header">
                         <div className="under-header_bb">
