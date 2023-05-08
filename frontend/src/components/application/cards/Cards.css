@@ -44,10 +44,15 @@
     height: 60px;
     background: rgba(38, 38, 38, 0.7);
     border-radius: 20px;
-
+    transition: 0.6s ease-in-out;
 
     font-weight: 700;
     font-size: 22px;
     line-height: 27px;
     color: #FFFFFF;
+}
+
+.card_button:hover {
+    background: #FFFFFF;
+    color: rgba(38, 38, 38, 0.7);
 }

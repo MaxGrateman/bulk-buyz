@@ -17,7 +17,12 @@ function Header() {
                             <label className="label">Bb shop</label>
                             <div className="sublabel">Bulkbuyz - открой новые возможности в Steam
                                 сменив регион в нашем магазине</div>
-                            <button className="under-header_button"><a href="#" className="under-header_button_text">Купить</a></button>
+                            <button className="under-header_button">
+                                <span className="circle" aria-hidden="true">
+                                  <span className="icon arrow"></span>
+                                </span>
+                                <span className="button-text">Купить</span>
+                            </button>
                         </div>
                         <div className="under-header_video">
                             <iframe width="486" height="266" src="https://www.youtube.com/embed/-iZxviiMlkU"

@@ -34,6 +34,23 @@
     font-weight: 700;
     font-size: 16px;
     color: #F0F0F0;
+    display: inline-block;
+    position: relative;
+}
+
+.navigation_link:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    -webkit-mask-size: 200%;
+    animation: wave 1.5s infinite;
+}
+
+@-webkit-keyframes wave {
+    from {
+        -webkit-mask-position: 150%;
+    }
+    to {
+        -webkit-mask-position: -50%;
+    }
 }
 
 .under-header {
@@ -66,19 +83,102 @@
 }
 
 .under-header_button {
-    width: 172px;
+    width: 10rem;
+    height: auto;
+    margin-top: 28px;
+    /*width: 172px;
     height: 49px;
     text-align: center;
     margin-top: 45px;
     background: #262626;
     border-radius: 15px;
-}
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
 
-.under-header_button_text {
     font-weight: 700;
     font-size: 22px;
     line-height: 27px;
-    color: #FFFFFF;
+    color: #FFFFFF;*/
+}
+
+
+.under-header_button:hover .button-text {
+    color: white;
+}
+
+.under-header_button:hover .circle{
+    width: 100%;
+}
+
+.circle:hover .icon {
+    background: white;
+    transform: translate(1rem, 0);
+}
+
+.icon:hover .arrow .under-header_button{
+    background: black;
+    transform: translate(1rem, 0);
+}
+
+.circle {
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: black;
+    border-radius: 1.625rem;
+}
+
+.icon {
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: white;
+}
+
+.arrow {
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.arrow::before {
+    position: absolute;
+    content: '';
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.button-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: black;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.45s cubic-bezier(0.65,0,.076,1);
+}
+
+.button-text:hover {
+    color: white;
 }
 
 .under-header_video {
