@@ -9,7 +9,7 @@
     width: 1315px;
     height: 100%;
     margin: 0 auto;
-    padding: 10px 0 0 0;
+    padding: 26px 0 0 0;
 }
 
 .header_navigation {
@@ -72,8 +72,6 @@
     margin-top: 45px;
     background: #262626;
     border-radius: 15px;
-    outline: 0;
-    border: none;
 }
 
 .under-header_button_text {
