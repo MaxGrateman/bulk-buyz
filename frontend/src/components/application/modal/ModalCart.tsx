@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 
 import './ModalCart.css'
 import cart_icon from '../../../assets/cart.svg'
+import cross_icon from '../../../assets/cross-black.svg'
 
 
 function ModalCart() {
@@ -22,6 +23,7 @@ function ModalCart() {
             <div className="modal_header">
                 <img src={cart_icon} alt='cart-icon' width={24} height={24}/>
                 <label className="modal_header_label">История покупок</label>
+                <button onClick={closeModal} className='modal_header_close'><img  src={cross_icon} alt='black-cross-icon' /></button>
             </div>
             <div className='modal_wrapper'>
                 <input placeholder='E-mail, указанный при оплате' className="modal_wrapper_input"/>
@@ -37,7 +39,7 @@ function ModalCart() {
                     <img src={cart_icon} alt='cart-icon' className="navigation_cart_icon"/>
                 </div>
             </button>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="modal">
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} closeTimeoutMS={1} preventScroll={true} className="modal">
                 {modalContent}
             </Modal>
         </div>
