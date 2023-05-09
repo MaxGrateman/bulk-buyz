@@ -1,7 +1,10 @@
-import React from 'react';
+import cart_icon from '../../../assets/cart.svg'
+
 import './Header.css';
+import ModalCart from '../modal/ModalCart'
 
 function Header() {
+
     return (
             <div className="header">
                 <div className="container">
@@ -10,7 +13,7 @@ function Header() {
                         <a href='#' className="navigation_link">Поддержка</a>
                         <a href='#' className="navigation_link">Отзывы</a>
                         <a href='#' className="navigation_link">О нас</a>
-                        <a href='#' className="navigation_link">Мои покупки</a>
+                        <ModalCart/>
                     </nav>
                     <div className="under-header">
                         <div className="under-header_bb">

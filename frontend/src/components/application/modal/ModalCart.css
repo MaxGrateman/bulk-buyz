@@ -1,0 +1,70 @@
+.ReactModal__Body--open {
+    position: sticky !important;
+    overflow: hidden !important;
+}
+
+.modal {
+    width: 354px;
+    min-height: 173px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin: 300px 750px;
+    outline: 0;
+    border: none;
+}
+
+.modal_header {
+    width: 354px;
+    height: 46px;
+    background: linear-gradient(180deg, rgba(129, 106, 255, 0.8) 0%, rgba(170, 0, 255, 0.8) 100%);
+    border-radius: 20px 20px 0 0;
+    padding: 11px 70px 0 44px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal_header_label {
+    font-weight: 500;
+    font-size: 20px;
+    color: #F0F0F0;
+}
+
+.modal_wrapper {
+    width: 100%;
+    height: 127px;
+    padding: 19px 30px 19px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.modal_wrapper_input {
+    width: 296px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.modal_wrapper_input::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+}
+
+.modal_wrapper_button {
+    width: 296px;
+    height: 32px;
+    background: #1E5BA7;
+    border-radius: 10px;
+
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+}

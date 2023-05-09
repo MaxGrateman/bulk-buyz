@@ -43,6 +43,7 @@
     width: 200px;
     height: 60px;
     background: rgba(38, 38, 38, 0.7);
+    border: thin solid rgba(38, 38, 38, 0.7);
     border-radius: 20px;
     transition: 0.6s ease-in-out;
 
