@@ -32,8 +32,8 @@ require_once __DIR__ . "/vendor/autoload.php";
 require_once __DIR__ . '/configuration.php';
 require_once __DIR__ . '/functions.php';
 
-$body = "Здарова";
-var_dump(send_mail($mail_settings, ['abcdefg1214489@gmail.com'], 'Test-letter', $body ));
+$body = "Hello. This is test message of bulkbuyz.";
+var_dump(send_mail($mail_settings_porkbun, ['abcdefg1214489@gmail.com'], 'Test', $body ));
 
 ?>
 
