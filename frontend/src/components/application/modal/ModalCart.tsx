@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
-
 import './ModalCart.css'
 import cart_icon from '../../../assets/cart.svg'
 import cross_icon from '../../../assets/cross-black.svg'
@@ -39,9 +37,6 @@ function ModalCart() {
                     <img src={cart_icon} alt='cart-icon' className="navigation_cart_icon"/>
                 </div>
             </button>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} closeTimeoutMS={1} preventScroll={true} className="modal">
-                {modalContent}
-            </Modal>
         </div>
     )
 }

@@ -8,7 +8,7 @@ function Cards() {
 
 
     return(
-        <div className="cards">
+        <div className="cards" id="cards">
             <label className="cards_label">Смена региона Steam</label>
             <div className="cards_sublabel">Оформи покупку в несколько кликов</div>
             <div className="cards_wrapper">
