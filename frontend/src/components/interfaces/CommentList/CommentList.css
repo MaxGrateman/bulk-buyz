@@ -21,11 +21,11 @@
 .comment_data {
     font-weight: 700;
     font-size: 24px;
-    color: #5A4F4F;
+    color: #F0F0F0;
 }
 
 .comment_text {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 22px;
     color: #000000;
 }
