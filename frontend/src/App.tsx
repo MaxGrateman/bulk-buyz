@@ -4,6 +4,7 @@ import Header from './components/application/header/Header'
 import Cards from './components/application/cards/Cards'
 import Reviews from "./components/application/reviews/Reviews";
 import Footer from "./components/application/footer/Footer";
+import Support from "./components/application/support/Support";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Header/>
         <Cards/>
         <Reviews/>
+        <Support/>
         <Footer/>
     </div>
   )
