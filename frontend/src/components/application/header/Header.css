@@ -36,10 +36,13 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
+    scale: 1;
+    transition: 0.4s ease;
 }
 
 .navigation_link:hover {
     color: #ffffff;
+    transform: scale(1.1);
 }
 
 .navigation_cart {
