@@ -8,6 +8,7 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.5s;
+    z-index: 1;
 }
 
 .modal.activated {
@@ -26,6 +27,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transform: scale(0.5);
     transition: 0.4s all;
+    z-index: 2;
 }
 
 .modal_content.activated {
@@ -86,15 +88,6 @@
     color: #000000;
 }
 
-.modal_wrapper_input:hover {
-    background: #e5e5e5;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.modal_wrapper_input:focus {
-    background: #e5e5e5;
-}
-
 .modal_wrapper_button {
     width: 296px;
     height: 32px;
@@ -104,10 +97,12 @@
     font-weight: 500;
     font-size: 20px;
     color: #FFFFFF;
-    transition: 0.3s ease-in;
+    transition: 0.2s ease-in;
 }
 
 .modal_wrapper_button:hover {
-    color: #1E5BA7;
     background: #FFFFFF;
+    color: #1E5BA7;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }

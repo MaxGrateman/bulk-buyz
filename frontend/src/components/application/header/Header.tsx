@@ -8,7 +8,7 @@ import React, {useState} from "react";
 
 function Header() {
 
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
 
     return (
             <div className="header">
