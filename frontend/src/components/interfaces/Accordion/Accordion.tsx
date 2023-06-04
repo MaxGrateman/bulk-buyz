@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Accordion.css'
-import plus from '../../../assets/cross.svg'
+import plus from '../../../assets/plus-icon.png'
 
 interface AccordionData {
     title: string;

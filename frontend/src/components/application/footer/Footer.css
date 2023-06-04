@@ -62,6 +62,11 @@
     font-size: 16px;
     color: #929292;
     cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.footer_link:hover {
+    color: white;
 }
 
 .footer_credits {
