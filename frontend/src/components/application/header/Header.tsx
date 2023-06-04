@@ -1,12 +1,14 @@
 import cart_icon from '../../../assets/cart.svg'
-
 import './Header.css';
 import ModalCart from '../modal/ModalCart'
 import * as Scroll from 'react-scroll';
 import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import React, {useState} from "react";
+
 
 function Header() {
 
+    const [modalActive, setModalActive] = useState(true);
 
     return (
             <div className="header">
@@ -16,7 +18,13 @@ function Header() {
                         <Link to="#" className="navigation_link">Поддержка</Link>
                         <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="navigation_link">Отзывы</Link>
                         <Link to="#" className="navigation_link">О нас</Link>
-                        <ModalCart/>
+                        <button className="navigation_cart" onClick={() => setModalActive(true)}>
+                            <a href='#' style={{padding: '10px 0 0 10px'}}>Мои покупки</a>
+                            <div className="navigation_cart_container">
+                                <img src={cart_icon} alt='cart-icon' className="navigation_cart_icon"/>
+                            </div>
+                        </button>
+                        <ModalCart active={modalActive} setActive={setModalActive}/>
                     </nav>
                     <div className="under-header">
                         <div className="under-header_bb">
@@ -41,6 +49,7 @@ function Header() {
                     </div>
                 </div>
             </div>
+
     );
 };
 

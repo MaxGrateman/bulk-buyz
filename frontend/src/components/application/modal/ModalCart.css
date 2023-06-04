@@ -1,8 +1,21 @@
-.ReactModal__Overlay--after-open {
-    background-color: rgba(0,0,0,0.5) !important;
+.modal {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.64);
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-.modal {
+.modal.activated {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal_content {
     width: 354px;
     min-height: 173px;
     background: #FFFFFF;
@@ -11,6 +24,12 @@
     outline: 0;
     border: none;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transform: scale(0.5);
+    transition: 0.4s all;
+}
+
+.modal_content.activated {
+    transform: scale(1);
 }
 
 .modal_header {
@@ -31,16 +50,11 @@
 }
 
 .modal_header_close {
-    width: 14px;
-    height: 14px;
-    margin-top: 5px;
-    transition: 0.3s ease-in-out;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
 }
 
-.model_header_close:hover {
-    width: 16px;
-    height: 16px;
-}
 
 .modal_wrapper {
     width: 100%;
@@ -62,12 +76,23 @@
     border-radius: 10px;
     box-sizing: border-box;
     text-align: center;
+    outline: none;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .modal_wrapper_input::placeholder {
     font-weight: 500;
     font-size: 14px;
     color: #000000;
+}
+
+.modal_wrapper_input:hover {
+    background: #e5e5e5;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.modal_wrapper_input:focus {
+    background: #e5e5e5;
 }
 
 .modal_wrapper_button {

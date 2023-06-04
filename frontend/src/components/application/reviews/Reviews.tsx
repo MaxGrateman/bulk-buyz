@@ -12,7 +12,7 @@ function Reviews() {
 
 
     return(
-        <div className="reviews" id="reviews">
+        <section className="reviews" id="reviews">
             <div className="reviews_wrapper">
                 <label className="reviews_label">Отзывы</label>
                 <div className="reviews_under_label">Отзывы о нас</div>
@@ -27,7 +27,7 @@ function Reviews() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
