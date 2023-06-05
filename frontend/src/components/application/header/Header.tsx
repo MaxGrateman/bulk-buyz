@@ -1,30 +1,68 @@
 import cart_icon from '../../../assets/cart.svg'
+import cross_icon from '../../../assets/cross-black.svg'
 import './Header.css';
 import ModalCart from '../modal/ModalCart'
-import * as Scroll from 'react-scroll';
-import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import Modal from "../modal/ModalDefault";
+import { Link} from 'react-scroll'
 import React, {useState} from "react";
 
 
-function Header() {
+const Header = ({setActive} :any) => {
 
-    const [modalActive, setModalActive] = useState(false);
+    const [modalCart, setModalCart] = useState(false);
+    const [modalAbout, setModalAbout] = useState(false);
+    const [modalSupport, setModalSupport] = useState(false);
 
     return (
             <div className="header">
                 <div className="container">
                     <nav className="header_navigation">
                         <a href='http://localhost:5173/' className="navigation_logo"></a>
-                        <Link to="#" className="navigation_link">Поддержка</Link>
+
+                        {/*Модальное окно поддержки*/}
+                        <button className="navigation_link" onClick={() => setModalSupport(true)}>Поддержка</button>
+                        <Modal active={modalSupport} setActive={setModalSupport}>
+                            <div className="modal_header_large">
+                                <label className="modal_header_label_large">Поддержка</label>
+                                <button className='modal_header_close' onClick={() => setModalSupport(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
+                            </div>
+                            <p className="modal_text_large">
+                                Вы можете связаться с нами по указанным контактным данным
+                            </p>
+                            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
+                                <p className='modal_text_large'>Email: <a className="modal_link">admin@bulkbuyz.ru</a></p>
+                                <p className='modal_text_large'>Telegram: <a className="modal_link">Siiiiiiiiiiiiiiiiiiiiiiu</a></p>
+                            </div>
+                        </Modal>
+                        {/*Ссылка-якорь отзывы*/}
                         <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="navigation_link">Отзывы</Link>
-                        <Link to="#" className="navigation_link">О нас</Link>
-                        <button className="navigation_cart" onClick={() => setModalActive(true)}>
+
+                        {/* Модальное окно о нас */}
+                        <button onClick={() => setModalAbout(true)} className="navigation_link">О нас</button>
+                        <Modal active={modalAbout} setActive={setModalAbout}>
+                            <div className="modal_header_large">
+                                <label className="modal_header_label_large">О нас</label>
+                                <button className='modal_header_close' onClick={() => setModalAbout(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
+                            </div>
+                            <p className="modal_text_large">
+                                Bulkbuyz - официальный сайт,
+                                предоставляющий пользователем возможность
+                                сменить регион в магазине Steam. Мы успешно
+                                занимаемся этой деятельностью уже более 1
+                                года и имеем множество положительных
+                                отзывов от наших клиентов.
+                            </p>
+                        </Modal>
+
+
+                        {/*{* Модальное окно с тележкой *}*/}
+                        <button className="navigation_cart" onClick={() => setModalCart(true)}>
                             <a href='#' style={{padding: '10px 0 0 10px'}}>Мои покупки</a>
                             <div className="navigation_cart_container">
                                 <img src={cart_icon} alt='cart-icon' className="navigation_cart_icon"/>
                             </div>
                         </button>
-                        <ModalCart active={modalActive} setActive={setModalActive}/>
+                        <ModalCart active={modalCart} setActive={setModalCart}/>
                     </nav>
                     <div className="under-header">
                         <div className="under-header_bb">
