@@ -17,6 +17,7 @@
 }
 
 .modal_content_small {
+    width: 354px;
     background: #FFFFFF;
     border-radius: 20px;
     margin: 300px 750px;
