@@ -31,9 +31,14 @@
 require_once __DIR__ . "/vendor/autoload.php";
 require_once __DIR__ . '/configuration.php';
 require_once __DIR__ . '/functions.php';
-
+require_once __DIR__ . '/credentials.php';
 $body = "Hello. This is test message of bulkbuyz.";
-var_dump(send_mail($mail_settings_porkbun, ['abcdefg1214489@gmail.com'], 'Test', $body ));
+//var_dump(send_mail($mail_settings_porkbun, ['abcdefg1214489@gmail.com'], 'Test', $body ));
 
+$database = new PDO($dsn, $username, $password); // Подключение к бд
+var_dump($database);
+$emails = $database->query("SELECT * FROM `users`")->fetchAll(PDO::FETCH_ASSOC);
+
+print_r($emails);
 ?>
 

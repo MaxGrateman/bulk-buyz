@@ -39,3 +39,4 @@ $mail_settings_porkbun = [
     'name' => 'Bulkbuyz-mail',
     'is_html' => 'true',
 ];
+
