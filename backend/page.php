@@ -9,21 +9,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="#openModal">Открыть модальное окно</a>
-    <div id="openModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Заголовок</h3>
-                    <a href="#close" title="Close" class="close">×</a>
-                </div>
-                <div class="modal-body">
-                    <input placeholder="E-mail, указанный при оплате" class="modal_wrapper_input">
+<a href="#openModal">Открыть модальное окно</a>
+<div id="openModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Заголовок</h3>
+                <a href="#close" title="Close" class="close">×</a>
+            </div>
+            <div class="modal-body">
+                <form id="emailForm" action="page.php" method="POST">
+                    <input placeholder="E-mail, указанный при оплате" class="modal_wrapper_input" name="email">
                     <button type="submit" class="modal_wrapper_button">Продолжить</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
 
@@ -35,10 +37,32 @@ require_once __DIR__ . '/credentials.php';
 $body = "Hello. This is test message of bulkbuyz.";
 //var_dump(send_mail($mail_settings_porkbun, ['abcdefg1214489@gmail.com'], 'Test', $body ));
 
-$database = new PDO($dsn, $username, $password); // Подключение к бд
-var_dump($database);
+try {
+    $database = new PDO($dsn, $username, $password);
+    $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Ошибка подключения к базе данных: ' . $e->getMessage();
+    exit();
+}
+
 $emails = $database->query("SELECT * FROM `users`")->fetchAll(PDO::FETCH_ASSOC);
 
-print_r($emails);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+
+    // Проверка наличия электронной почты в базе данных
+    $query = 'SELECT COUNT(*) FROM `users` WHERE email = :email';
+    $stmt = $database->prepare($query);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $count = $stmt->fetchColumn();
+
+    if ($count > 0) {
+    echo "Данные успешно высланы на вашу почту";
+    } else {
+        echo 'Ошибка: Электронная почта не найдена в базе данных.';
+    }
+}
+
 ?>
 
