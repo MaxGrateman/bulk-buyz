@@ -13,6 +13,7 @@ function send_mail(array $mail_settings, array $to, string $subject, string $bod
         $mail->Password = $mail_settings['password'];
         $mail->SMTPSecure = $mail_settings['secure'];
         $mail->Port = $mail_settings['port'];
+        $mail->CharSet = "utf-8";
 
         $mail->setFrom($mail_settings['from'], $mail_settings['name']);
         foreach ($to as $email) {
@@ -24,7 +25,7 @@ function send_mail(array $mail_settings, array $to, string $subject, string $bod
         return $mail->send();
 
     } catch (\PHPMailer\PHPMailer\Exception $e) {
-        //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         return false;
     }
 }
