@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
 import './ModalCart.css'
 import cart_icon from '../../../assets/cart.svg'
 import cross_icon from '../../../assets/cross-black.svg'
-
+import {useState} from "react";
 
 const ModalCart = ({active, setActive} : any) => {
 
+
     return(
         <div className={ active ? "modal activated " : "modal"} onClick={() => setActive(false)}>
-            <div className={ active ? "modal_content_small activated " : "modal_content_small"} onClick={e => e.stopPropagation()}>
+            <div className={ active ? "modal_content_small activated " : "modal_content_small"} onClick={() => setActive(false)}>
                 <div className="modal_header_cart">
                     <img src={cart_icon} alt='cart-icon' width={24} height={24}/>
                     <label className="modal_header_label">История покупок</label>

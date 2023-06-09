@@ -10,11 +10,16 @@
     transition: 0.4s all;
     z-index: 2;
     box-sizing: border-box;
-    padding: 33px 20px 39px 72px;
+    padding: 32px 20px 16px 72px;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .modal_content.activated {
     transform: scale(1);
+    opacity: 1;
 }
 
 .modal_header_large {
@@ -26,21 +31,33 @@
     font-weight: 700;
     font-size: 25px;
     color: #000000;
+    margin-bottom: 24px;
 }
 
 .modal_text_large {
     font-weight: 400;
     font-size: 25px;
     color: #000000;
-    margin-top: 30px;
     line-height: 30px;
+    margin-bottom: 20px;
 }
 
-.modal_link {
-    font-weight: 400;
+.modal_button_large {
+    align-self: center;
+    width: 200px;
+    height: 50px;
+    background: #816AFF;
+    border-radius: 20px;
+    border: 2px solid #816AFF;
+    transition: 0.4s;
+
+    font-weight: 700;
     font-size: 25px;
-    line-height: 30px;
-    text-decoration-line: underline;
-    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.modal_button_large:hover {
+    background: #FFFFFF;
     color: #816AFF;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }

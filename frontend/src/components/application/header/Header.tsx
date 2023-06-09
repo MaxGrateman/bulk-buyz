@@ -13,6 +13,7 @@ const Header = ({setActive} :any) => {
     const [modalAbout, setModalAbout] = useState(false);
     const [modalSupport, setModalSupport] = useState(false);
 
+
     return (
             <div className="header">
                 <div className="container">
@@ -27,12 +28,14 @@ const Header = ({setActive} :any) => {
                                 <button className='modal_header_close' onClick={() => setModalSupport(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
                             </div>
                             <p className="modal_text_large">
-                                Вы можете связаться с нами по указанным контактным данным
+                                Возможно, на ваш вопрос уже имеется
+                                ответ в разделе FAQ, ниже по сайту.
                             </p>
-                            <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                                <p className='modal_text_large'>Email: <a className="modal_link">admin@bulkbuyz.ru</a></p>
-                                <p className='modal_text_large'>Telegram: <a className="modal_link">Siiiiiiiiiiiiiiiiiiiiiiu</a></p>
-                            </div>
+                            <p className="modal_text_large">
+                                Если ваша проблема уникальна, пожалуйста,
+                                свяжитесь с нами!
+                            </p>
+                            <button className="modal_button_large"><a>ПОМОЩЬ</a></button>
                         </Modal>
                         {/*Ссылка-якорь отзывы*/}
                         <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="navigation_link">Отзывы</Link>
