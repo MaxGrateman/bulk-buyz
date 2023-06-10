@@ -41,10 +41,11 @@ function Reviews() {
                 <div className='reviews_columns'>
                     <div className="reviews_column">
                         <a href='https://plati.io/seller/wexenone/1097528/' className="reviews_column_links">Отзывы на площадке Plati.market</a>
-                        <ReviewList reviews={reviews}/>
+                        <ReviewList reviews={reviews.slice(0, 3)}/>
                     </div>
                     <div className="reviews_column">
                         <a className="reviews_column_links">Отзывы на площадке GGSEL</a>
+                        <ReviewList reviews={reviews.slice(-3)}/>
                     </div>
                 </div>
             </div>
