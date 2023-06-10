@@ -83,7 +83,13 @@
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.modal_wrapper_input::placeholder {
+::-webkit-input-placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    color: #000000;
+}
+
+::-ms-input-placeholder {
     font-weight: 500;
     font-size: 14px;
     color: #000000;

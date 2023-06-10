@@ -42,8 +42,11 @@
     margin-bottom: 20px;
 }
 
-.modal_button_large {
+.modal_button_link {
     align-self: center;
+}
+
+.modal_button_large {
     width: 200px;
     height: 50px;
     background: #816AFF;

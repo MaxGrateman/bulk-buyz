@@ -1,5 +1,6 @@
-export interface IComment {
+export interface IReview {
     id: number;
-    data: string;
-    text: string;
+    date: string;
+    "info": string;
 }
+

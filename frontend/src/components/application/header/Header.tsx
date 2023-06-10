@@ -35,7 +35,9 @@ const Header = ({setActive} :any) => {
                                 Если ваша проблема уникальна, пожалуйста,
                                 свяжитесь с нами!
                             </p>
-                            <button className="modal_button_large"><a>ПОМОЩЬ</a></button>
+                            <a href="https://chat.digiseller.ru/asp/messenger.asp" className="modal_button_link">
+                                <button className="modal_button_large" >ПОМОЩЬ</button>
+                            </a>
                         </Modal>
                         {/*Ссылка-якорь отзывы*/}
                         <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="navigation_link">Отзывы</Link>
@@ -67,6 +69,8 @@ const Header = ({setActive} :any) => {
                         </button>
                         <ModalCart active={modalCart} setActive={setModalCart}/>
                     </nav>
+
+                    {/* Секция с видео и остальным под нав баром*/}
                     <div className="under-header">
                         <div className="under-header_bb">
                             <label className="label">Bb shop</label>

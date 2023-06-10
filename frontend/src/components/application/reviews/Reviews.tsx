@@ -1,15 +1,37 @@
 import './Reviews.css'
-import CommentList from "../../interfaces/CommentList/CommentList";
-import {IComment} from "../../types/types";
+import ReviewList from "../../interfaces/ReviewtList/ReviewList";
+import {IReview} from "../../types/types";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 function Reviews() {
+    const [reviews, setReviews] = useState<IReview[]>([])
+    interface ReviewsData {
+        review: IReview[]; // Оберните интерфейс IReview в массив
+    }
 
-    const comments: IComment[] = [
-        {id: 1, data: '1 мая, 2023', text: 'Спасибо. Всё отлично! Как и заявленно в описании'},
-        {id: 2, data: '26 мая, 2023', text: 'Good'},
-        {id: 3, data: '2 августа, 2023', text: 'Всё прекрасно!'},
-    ]
+    useEffect(() => {
+        fetchReviews()
+    }, [])
 
+    async function fetchReviews() {
+        try {
+            const response = await axios.get<ReviewsData>(
+                `https://api.digiseller.ru/api/reviews?seller_id=1097528&product_id=&type=all&page=&rows=6`,
+                {
+                    responseType: 'json',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+            );
+            const reviewsData = response.data?.review;
+            console.log(reviewsData);
+            setReviews(reviewsData || []);
+        } catch (e) {
+            alert(e);
+        }
+    }
 
     return(
         <section className="reviews" id="reviews">
@@ -19,11 +41,10 @@ function Reviews() {
                 <div className='reviews_columns'>
                     <div className="reviews_column">
                         <a href='https://plati.io/seller/wexenone/1097528/' className="reviews_column_links">Отзывы на площадке Plati.market</a>
-                        <CommentList comments={comments}/>
+                        <ReviewList reviews={reviews}/>
                     </div>
                     <div className="reviews_column">
                         <a className="reviews_column_links">Отзывы на площадке GGSEL</a>
-                        <CommentList comments={comments}/>
                     </div>
                 </div>
             </div>
