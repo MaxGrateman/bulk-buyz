@@ -26,7 +26,6 @@ function Reviews() {
                 }
             );
             const reviewsData = response.data?.review;
-            console.log(reviewsData);
             setReviews(reviewsData || []);
         } catch (e) {
             alert(e);
