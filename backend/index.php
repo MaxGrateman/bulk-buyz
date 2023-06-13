@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(E_ALL);
 
 $id = "C256592A10714D69BFB237649D2C8110";
@@ -24,5 +23,6 @@ $result = curl_exec($ch);
 curl_close($ch);
 $response = json_decode($result, true);
 print_r($response);
+
 
 

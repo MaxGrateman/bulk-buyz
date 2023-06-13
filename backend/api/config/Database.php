@@ -8,7 +8,7 @@ class Database
     private string $password = "r8Wq%GIzdN&S1kaP";
     public ?PDO $connection;
 
-    public function getConnection(): PDO
+    public function getConnection() :object
     {
         $this->connection = null;
 
@@ -22,4 +22,16 @@ class Database
 
         return $this->connection;
     }
+
+    public function getEmail() :array
+    {
+       return $this->getConnection()->query("SELECT `email` FROM users")->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
+
+$database = new Database();
+$result = $database->getEmail();
+var_dump($result);
+
+
