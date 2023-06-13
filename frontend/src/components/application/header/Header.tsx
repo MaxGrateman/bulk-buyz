@@ -2,8 +2,12 @@ import cart_icon from '../../../assets/cart.svg'
 import './Header.css';
 import { Link} from 'react-scroll'
 import React, {useState} from "react";
-
-const Header= () => {
+import Modal from "../modal/Modal";
+import cross_icon from "../../../assets/cross.svg";
+const Header= ({onClose} : any) => {
+    const [cartModal, setCartModal] = useState(false)
+    const [supportModal, setSupportModal] = useState(false)
+    const [aboutModal, setAboutModal] = useState(false)
 
 
     return (
@@ -13,24 +17,26 @@ const Header= () => {
                         <a href='http://localhost:5173/' className="navigation_logo"></a>
 
                         {/*Модальное окно поддержки*/}
-                        <button className="navigation_link">Поддержка</button>
+                        <button className="navigation_link" onClick={() => setSupportModal(true)}>Поддержка</button>
 
 
                         {/*Ссылка-якорь отзывы*/}
                         <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="navigation_link">Отзывы</Link>
 
                         {/* Модальное окно о нас */}
-                        <button  className="navigation_link">О нас</button>
+                        <button  className="navigation_link" onClick={() => setAboutModal(true)}>О нас</button>
 
 
                         {/*{* Модальное окно с тележкой *}*/}
-                        <button className="navigation_cart" >
+                        <button className="navigation_cart" onClick={() => setCartModal(true)}>
                             <a href='#' style={{padding: '10px 0 0 10px'}}>Мои покупки</a>
                             <div className="navigation_cart_container">
                                 <img src={cart_icon} alt='cart-icon' className="navigation_cart_icon"/>
                             </div>
                         </button>
                     </nav>
+
+
 
                     {/* Секция с видео и остальным под нав баром*/}
                     <div className="under-header">
@@ -55,6 +61,47 @@ const Header= () => {
                         </div>
                     </div>
                 </div>
+                <Modal open={cartModal} onClose={() => setCartModal(false)} width="354px" height="172px">
+                    <div className="modal_header_cart">
+                        <img src={cart_icon} alt='cart-icon' width={24} height={24}/>
+                        <label className="modal_header_label">История покупок</label>
+                        <img className="modal_header_close" src={cross_icon} alt='black-cross-icon' onClick={onClose}/>
+                    </div>
+                    <div className='modal_wrapper'>
+                        <input placeholder='E-mail, указанный при оплате' className="modal_wrapper_input"/>
+                        <button className="modal_wrapper_button">Продолжить</button>
+                    </div>
+                </Modal>
+                <Modal width="784px" height="312px" padding="32px 20px 16px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
+                    <div className="modal_header_large">
+                        <label className="modal_header_label_large">Поддержка</label>
+                        <button className='modal_header_close' onClick={() => setSupportModal(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
+                    </div>
+                    <p className="modal_text_large">
+                        Возможно, на ваш вопрос уже имеется
+                        ответ в разделе FAQ, ниже по сайту.
+                    </p>
+                    <p className="modal_text_large">
+                        Если ваша проблема уникальна, пожалуйста,
+                        свяжитесь с нами!
+                    </p>
+                    <button className="modal_button_large"><a>ПОМОЩЬ</a></button>
+                </Modal>
+                <Modal width="784px" height="312px" padding="32px 20px 16px 50px" open={aboutModal} onClose={() => setAboutModal(false)}>
+                    <div className="modal_header_large">
+                        <label className="modal_header_label_large">О нас</label>
+                        <button className='modal_header_close' onClick={() => setAboutModal(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
+                    </div>
+                    <p className="modal_text_large">
+                        Bulkbuyz - официальный сайт,
+                        предоставляющий пользователем возможность
+                        сменить регион в магазине Steam. Мы успешно
+                        занимаемся этой деятельностью уже более 1
+                        года и имеем множество положительных
+                        отзывов от наших клиентов.
+                    </p>
+
+                </Modal>
             </div>
 
     );
