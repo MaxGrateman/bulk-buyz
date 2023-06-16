@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Неверный e-mail";
     } elseif ($count > 0) {
         echo "Данные успешно высланы на вашу почту";
-        var_dump(send_mail($mail_settings, [$email], 'Ваши покупки', $body));
+        var_dump(send_mail($mail_settings, [$email], 'Ваши покупки', "Предоставляем вам список ваших покупок:"));
     } else {
         echo 'Ошибка: Электронная почта не найдена в базе данных.';
     }
