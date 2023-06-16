@@ -1,9 +1,13 @@
 import cart_icon from '../../../assets/cart.svg'
-import './Header.css';
+import cross_icon from "../../../assets/cross.svg";
+
 import { Link} from 'react-scroll'
 import React, {useState} from "react";
+
+import EmailForm from "../../utils/EmailForm";
+import './Header.css';
 import Modal from "../modal/Modal";
-import cross_icon from "../../../assets/cross.svg";
+
 const Header= ({onClose} : any) => {
     const [cartModal, setCartModal] = useState(false)
     const [supportModal, setSupportModal] = useState(false)
@@ -65,12 +69,13 @@ const Header= ({onClose} : any) => {
                     <div className="modal_header_cart">
                         <img src={cart_icon} alt='cart-icon' width={24} height={24}/>
                         <label className="modal_header_label">История покупок</label>
-                        <img className="modal_header_close" src={cross_icon} alt='black-cross-icon' onClick={onClose}/>
+                        <button onClick={() => setCartModal(false)}><img className="modal_header_close" src={cross_icon} alt='black-cross-icon' /></button>
                     </div>
-                    <div className='modal_wrapper'>
+                    <EmailForm/>
+                    {/*<div className='modal_wrapper'>
                         <input placeholder='E-mail, указанный при оплате' className="modal_wrapper_input"/>
                         <button className="modal_wrapper_button">Продолжить</button>
-                    </div>
+                    </div>*/}
                 </Modal>
                 <Modal width="784px" height="312px" padding="32px 20px 16px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
                     <div className="modal_header_large">
