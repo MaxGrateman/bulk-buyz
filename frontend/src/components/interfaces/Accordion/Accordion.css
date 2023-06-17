@@ -1,0 +1,57 @@
+.accordion {
+    width: 972px;
+    height: 100%;
+    margin-top: 40px;
+    background: #1F1C1C;
+    border-radius: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    color: #F2F2F2;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    user-select: none;
+}
+
+.activeTitle {
+    color: #1F1C1C;
+}
+
+.active {
+    background-color: #AAC9F8;
+}
+
+.panel {
+    padding: 0 54px 26px 54px;
+    background-color: #AAC9F8;
+    overflow: hidden;
+    text-align: left;
+    border-radius: 0 0 25px 25px;
+    color: #1F1C1C;
+    user-select: none;
+}
+
+
+.plus {
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.activePlus {
+    transform: rotate(45deg);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
