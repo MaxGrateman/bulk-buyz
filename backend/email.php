@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Headers: application/json");
+header("Access-Control-Allow-Origin: http://localhost:5173");
+// УДАЛИТЬ HEADERS'ы при деплое
 require_once __DIR__ . "/vendor/autoload.php";
 require_once __DIR__ . '/configuration.php';
 require_once __DIR__ . '/functions.php';
