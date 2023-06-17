@@ -6,38 +6,29 @@ import Accordion from "../../interfaces/Accordion/Accordion";
 
     const accordionData = [
         {
-            title: 'Что происходит с валютой при смене региона в Steam?',
-            content: 'При смене региона в Steam на вашем аккаунте будет произведено\n' +
-                ' изменение валюты в соответствии с выбранным регионом. Steam \n' +
-                'автоматически осуществляет конвертацию вашего баланса Steam Wallet\n' +
-                ' и цен игр в новую валюту с использованием текущего курса обмена.',
+            title: 'Что мне будет доступно после смены региона?',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n' +
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
         {
-            title: 'Сколько занимает процесс смены региона?',
-            content: 'Процесс смены региона в Steam обычно занимает небольшое количество\n' +
-                ' времени. В большинстве случаев процесс смены региона занимает около\n' +
-                ' 5 минут или даже меньше. Важно учитывать, чтобы продавец был онлайн.',
+            title: 'Что мне будет доступно после смены региона?',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n' +
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
         {
-            title: 'Как происходит смена региона?',
-            content: 'После оплаты вас переадресует на страницу "оплаченного товара" для связи с продавцом.\n' +
-                'В переписке указываете способ авторизации в аккаунте (сканируете QR-код) либо отправляете логин, пароль и стим-гуард код.\n' +
-                'Продавец заходит в ваш аккаунт Steam и покупает игру по незначительной цене, используя виртуальную карту\n' +
-                'После смены региона вам отправляют номер карты (Может понадобится в случае блокировки для её снятия).',
+            title: 'Что мне будет доступно после смены региона?',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n' +
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
         {
-            title: 'Что происходит с моими играми при смене региона Steam?',
-            content: 'Ваши игры и контент в Steam останутся доступными после смены\n' +
-                ' региона либо станут доступными. Однако, некоторые игры и контент\n' +
-                ' могут иметь ограничения, связанные с региональными правами или\n' +
-                ' ценами.',
+            title: 'Что мне будет доступно после смены региона?',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n' +
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
         {
-            title: 'Могут ли возникнуть проблемы при смене региона Steam?',
-            content: 'При соблюдении рекомендаций, описанных при покупке, вероятность\n' +
-                ' возникновения проблем после смены региона в Steam существенно \n' +
-                'снижается. Эти рекомендации основаны на опыте и обратной связи наших \n' +
-                'клиентов, которые были довольны результатами.\n',
+            title: 'Что мне будет доступно после смены региона?',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n' +
+                'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         }
     ];
 
