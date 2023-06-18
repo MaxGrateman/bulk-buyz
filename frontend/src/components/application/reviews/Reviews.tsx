@@ -39,11 +39,11 @@ function Reviews() {
                 <div className="reviews_under_label">Отзывы о нас</div>
                 <div className='reviews_columns'>
                     <div className="reviews_column">
-                        <a href='https://plati.io/seller/wexenone/1097528/' className="reviews_column_links">Отзывы на площадке Plati.market</a>
+                        <a href='https://plati.io/seller/wexenone/1097528/' className="reviews_column_links">Отзывы на площадке <u>Plati.market</u></a>
                         <ReviewList reviews={reviews.slice(0, 3)}/>
                     </div>
                     <div className="reviews_column">
-                        <a className="reviews_column_links">Отзывы на площадке GGSEL</a>
+                        <a href='https://ggsel.net/sellers/1097528' className="reviews_column_links">Отзывы на площадке <u>GGSEL</u></a>
                         <ReviewList reviews={reviews.slice(-3)}/>
                     </div>
                 </div>
