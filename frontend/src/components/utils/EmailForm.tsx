@@ -15,7 +15,7 @@ const EmailForm = () => {
         }
         try {
             // Отправка данных
-            const response = await axios.post('http://bulkbuyz/backend/email.php',
+            const response = await axios.post('http://localhost:8080/backend/email.php',
                 { email: email },
                 { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
             );

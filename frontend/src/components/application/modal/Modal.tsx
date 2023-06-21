@@ -24,13 +24,20 @@ const Modal: React.FC<ModalProps>= ({
 
     useEffect(() => {
         if (open) {
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.overflow = 'hidden';
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
             document.body.classList.add('modal_open');
         } else {
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
             document.body.classList.remove('modal_open');
         }
     }, [open]);
 
-    if (!open) return null
+    if (!open) return null;
+
+    if (!open) return null;
 
     return (
         <div onClick={onClose} className="modal_overlay">

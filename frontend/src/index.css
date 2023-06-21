@@ -1,16 +1,15 @@
 :root {
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: #FFFFFF;
   font-family: 'Montserrat', sans-serif;
-  overflow: auto;
-}
-
-body.modal_open {
-  overflow: hidden;
 }
 
 a {

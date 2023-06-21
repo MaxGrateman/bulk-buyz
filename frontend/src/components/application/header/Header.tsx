@@ -1,5 +1,5 @@
 import cart_icon from '../../../assets/cart.svg'
-import cross_icon from "../../../assets/cross.svg";
+import cross_icon from "../../../assets/cross-black.svg";
 
 import { Link} from 'react-scroll'
 import React, {useState} from "react";
@@ -25,7 +25,7 @@ const Header= ({onClose} : any) => {
 
 
                         {/*Ссылка-якорь отзывы*/}
-                        <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="navigation_link">Отзывы</Link>
+                        <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={200} className="navigation_link">Отзывы</Link>
 
                         {/* Модальное окно о нас */}
                         <button  className="navigation_link" onClick={() => setAboutModal(true)}>О нас</button>
@@ -48,7 +48,7 @@ const Header= ({onClose} : any) => {
                             <label className="label">Bb shop</label>
                             <div className="sublabel">Bulkbuyz - открой новые возможности в Steam
                                 сменив регион в нашем магазине</div>
-                            <Link to="cards" spy={true} smooth={true} duration={500}>
+                            <Link to="cards" spy={true} smooth={true} duration={200}>
                                 <button className="under-header_button">
                                     <span className="circle" aria-hidden="true">
                                         <span className="icon arrow"></span>
