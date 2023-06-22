@@ -1,7 +1,7 @@
 import cart_icon from '../../../assets/cart.svg'
 import cross_icon from "../../../assets/cross-black.svg";
 
-import { Link} from 'react-scroll'
+import { Link } from 'react-scroll'
 import React, {useState} from "react";
 
 import EmailForm from "../../utils/EmailForm";

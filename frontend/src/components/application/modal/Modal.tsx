@@ -1,4 +1,4 @@
-import React, {useEffect, FC, ReactElement, ReactNode} from 'react';
+import React, {useEffect, FC, ReactElement, ReactNode, useState} from 'react';
 import "./Modal.css"
 import "./ModalLarge.css"
 import cart_icon from '../../../assets/cart.svg'
@@ -22,18 +22,39 @@ const Modal: React.FC<ModalProps>= ({
              padding
 } : any) => {
 
+    const [scrollbarWidth, setScrollbarWidth] = useState(0);
+    const [previousOverflow, setPreviousOverflow] = useState('');
+
     useEffect(() => {
+        // Функция для получения ширины скроллбара
+        const getScrollbarWidth = () => {
+            const scrollDiv = document.createElement('div');
+            scrollDiv.style.width = '100px';
+            scrollDiv.style.height = '100px';
+            scrollDiv.style.overflow = 'scroll';
+            scrollDiv.style.position = 'absolute';
+            scrollDiv.style.top = '-9999px';
+            document.body.appendChild(scrollDiv);
+            const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+            document.body.removeChild(scrollDiv);
+            return scrollbarWidth;
+        };
+
+        setScrollbarWidth(getScrollbarWidth());
+    }, []);
+
+    useEffect(() => {
+        const body = document.body as HTMLBodyElement;
+
         if (open) {
-            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-            document.body.style.overflow = 'hidden';
-            document.body.style.paddingRight = `${scrollbarWidth}px`;
-            document.body.classList.add('modal_open');
+            setPreviousOverflow(body.style.overflow);
+            body.style.overflow = 'hidden';
+            body.style.paddingRight = `${scrollbarWidth}px`;
         } else {
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-            document.body.classList.remove('modal_open');
+            body.style.overflow = previousOverflow;
+            body.style.paddingRight = '0';
         }
-    }, [open]);
+    }, [open, previousOverflow, scrollbarWidth]);
 
     if (!open) return null;
 
@@ -41,10 +62,8 @@ const Modal: React.FC<ModalProps>= ({
 
     return (
         <div onClick={onClose} className="modal_overlay">
-            <div className="modal_animation">
-                <div onClick={(e) => e.stopPropagation()} className="modal_content" style={{ width, height, padding}}>
-                    {children}
-                </div>
+            <div onClick={(e) => e.stopPropagation()} className="modal_content" style={{ width, height, padding}}>
+                {children}
             </div>
         </div>
     );

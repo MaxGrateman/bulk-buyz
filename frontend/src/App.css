@@ -1,6 +1,10 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    width: 100%; /* Используйте фиксированную ширину */
+    height: 100vh; /* Используйте фиксированную высоту */
     align-items: center;
 }
+
+
+
