@@ -1,6 +1,10 @@
 import './Footer.css'
 import {Link} from "react-scroll";
 
+import telegram_icon from '../../../assets/telegram.svg'
+import email_icon from '../../../assets/email.png'
+import gmail_icon from '../../../assets/gmail.png'
+
 
 function Footer() {
 
@@ -17,9 +21,12 @@ function Footer() {
                 </div>
                 <div className="footer_wrapper_right">
                     <nav className="footer_navigation">
-                        <Link to="#" className="footer_link">Поддержка</Link>
-                        <Link activeClass="active" to="reviews" spy={true} smooth={true} duration={500} className="footer_link">Отзывы</Link>
-                        <Link to="#" className="footer_link">О нас</Link>
+                        {/*<Link to="#" className="footer_link">Поддержка</Link>
+                        <Link  to="reviews" spy={true} smooth={true} duration={500} className="footer_link">Отзывы</Link>
+                        <Link to="#" className="footer_link">О нас</Link>*/}
+                        <img src={telegram_icon} alt="telegram" width={50} height={50}/>
+                        <img src={email_icon} alt="email" width={50} height={50}/>
+                        <img src={gmail_icon} alt="gmail" width={50} height={50}/>
                     </nav>
                     <div className="footer_credits">© Created by Max Astakhov & Sergey Sidorov</div>
                 </div>

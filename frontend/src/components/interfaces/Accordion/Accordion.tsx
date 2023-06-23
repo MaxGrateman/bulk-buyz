@@ -26,7 +26,7 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
         <div>
             {data.map((accordion, index) => (
                 <div
-                    className={`accordion ${activeIndex[index] ? 'active' : ''}`}
+                    className={`accordion ${activeIndex[index] ? 'activeBackground' : ''}`}
                     onClick={() => handleClick(index)}
                     key={index}
                 >

@@ -8,10 +8,12 @@ import EmailForm from "../../utils/EmailForm";
 import './Header.css';
 import Modal from "../modal/Modal";
 
-const Header= ({onClose} : any) => {
+const Header = () => {
     const [cartModal, setCartModal] = useState(false)
     const [supportModal, setSupportModal] = useState(false)
     const [aboutModal, setAboutModal] = useState(false)
+
+
 
 
     return (
@@ -71,7 +73,7 @@ const Header= ({onClose} : any) => {
                         <label className="modal_header_label">История покупок</label>
                         <button onClick={() => setCartModal(false)}><img className="modal_header_close" src={cross_icon} alt='black-cross-icon' /></button>
                     </div>
-                    <EmailForm/>
+                <EmailForm/>
                     {/*<div className='modal_wrapper'>
                         <input placeholder='E-mail, указанный при оплате' className="modal_wrapper_input"/>
                         <button className="modal_wrapper_button">Продолжить</button>
@@ -90,7 +92,7 @@ const Header= ({onClose} : any) => {
                         Если ваша проблема уникальна, пожалуйста,
                         свяжитесь с нами!
                     </p>
-                    <a href='https://chat.digiseller.ru/asp/messenger.asp' style={{alignSelf: 'center'}}><button  className="modal_button_large">ПОМОЩЬ</button></a>
+                    <a href='https://chat.digiseller.ru/asp/start.asp?fr=g&user=1097528&service=1&shop=1&lang=ru-RU' style={{alignSelf: 'center'}}><button  className="modal_button_large">ПОМОЩЬ</button></a>
                 </Modal>
                 <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={aboutModal} onClose={() => setAboutModal(false)}>
                     <div className="modal_header_large">
