@@ -1,16 +1,15 @@
 .support {
     width: 100%;
     background: #F0F0F0;
-
     display: flex;
     justify-content: center;
     box-sizing: border-box;
     text-align: center;
+    flex-grow: 1;
 }
 
 .support_wrapper{
     min-width: 1315px;
-    min-height: 745px;
     padding: 83px 0 68px 0;
     display: flex;
     align-items: center;
@@ -28,26 +27,4 @@
     font-size: 21px;
     color: #000000;
 }
-
-/*.support_bar {
-    width: 972px;
-    height: 90px;
-    margin-top: 40px;
-    background: #1F1C1C;
-    border-radius: 25px;
-    padding: 32px 0 0 0;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.support_bar_text {
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 27px;
-    color: #F2F2F2;
-}*/
 

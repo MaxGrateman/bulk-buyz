@@ -80,7 +80,7 @@ const Header= ({onClose} : any) => {
                 <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
                     <div className="modal_header_large">
                         <label className="modal_header_label_large">Поддержка</label>
-                        <button className='modal_header_close' onClick={() => setSupportModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
+                        <button className='modal_large_close' onClick={() => setSupportModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
                     </div>
                     <p className="modal_text_large">
                         Возможно, на ваш вопрос уже имеется
@@ -95,7 +95,7 @@ const Header= ({onClose} : any) => {
                 <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={aboutModal} onClose={() => setAboutModal(false)}>
                     <div className="modal_header_large">
                         <label className="modal_header_label_large">О нас</label>
-                        <button className='modal_header_close' onClick={() => setAboutModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
+                        <button className='modal_large_close' onClick={() => setAboutModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
                     </div>
                     <p className="modal_text_large">
                         Bulkbuyz - официальный сайт,

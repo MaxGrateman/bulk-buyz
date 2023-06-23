@@ -4,6 +4,7 @@
     background: transparent;
     text-align: center;
     margin-top: 59px;
+    flex-grow: 1;
 }
 
 .cards_label {

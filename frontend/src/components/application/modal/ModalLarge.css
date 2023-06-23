@@ -10,6 +10,15 @@
     margin-bottom: 30px;
 }
 
+.modal_large_close {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    position: absolute;
+    right: 36px;
+    top: 13px;
+}
+
 .modal_text_large {
     font-weight: 400;
     font-size: 25px;
@@ -36,8 +45,4 @@
     background: #FFFFFF;
     color: #816AFF;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.modal_wrapper_input:focus::placeholder {
-    color: transparent;
 }
