@@ -37,6 +37,7 @@ const EmailForm = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder='E-mail указанный при оплате'
             />
             {/*<div>
                 <textarea

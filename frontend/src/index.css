@@ -21,6 +21,12 @@ p {
   margin: 0;
 }
 
+input {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+}
+
 button {
   outline: none;
   border: none;

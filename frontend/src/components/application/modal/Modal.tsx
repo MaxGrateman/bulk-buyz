@@ -58,7 +58,6 @@ const Modal: React.FC<ModalProps>= ({
 
     if (!open) return null;
 
-    if (!open) return null;
 
     return (
         <div onClick={onClose} className="modal_overlay">

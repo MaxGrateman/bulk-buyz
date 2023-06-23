@@ -18,24 +18,39 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #F9F9F9;
-    border-radius: 30px;
+    border-radius: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+
+
+    animation-name: modalFadeIn;
+    animation-duration: 0.3s;
 }
 
 .modal_open {
     overflow-y: hidden;
+
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .modal_header_cart {
     height: 46px;
     background: linear-gradient(180deg, rgba(129, 106, 255, 0.8) 0%, rgba(170, 0, 255, 0.8) 100%);
-    border-radius: 30px 30px 0 0;
-    padding: 11px 36px 0 44px;
+    border-radius: 20px 20px 0 0;
+    padding: 11px 16px 10px 44px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 .modal_header_label {
@@ -45,8 +60,8 @@
 }
 
 .modal_header_close {
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     cursor: pointer;
 }
 

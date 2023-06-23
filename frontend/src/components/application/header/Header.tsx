@@ -1,5 +1,5 @@
 import cart_icon from '../../../assets/cart.svg'
-import cross_icon from "../../../assets/cross-black.svg";
+import cross_icon from '../../../assets/modal-cross.svg'
 
 import { Link } from 'react-scroll'
 import React, {useState} from "react";
@@ -77,10 +77,10 @@ const Header= ({onClose} : any) => {
                         <button className="modal_wrapper_button">Продолжить</button>
                     </div>*/}
                 </Modal>
-                <Modal width="784px" height="312px" padding="32px 20px 16px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
+                <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
                     <div className="modal_header_large">
                         <label className="modal_header_label_large">Поддержка</label>
-                        <button className='modal_header_close' onClick={() => setSupportModal(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
+                        <button className='modal_header_close' onClick={() => setSupportModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
                     </div>
                     <p className="modal_text_large">
                         Возможно, на ваш вопрос уже имеется
@@ -90,12 +90,12 @@ const Header= ({onClose} : any) => {
                         Если ваша проблема уникальна, пожалуйста,
                         свяжитесь с нами!
                     </p>
-                    <button className="modal_button_large"><a>ПОМОЩЬ</a></button>
+                    <a href='https://chat.digiseller.ru/asp/messenger.asp' style={{alignSelf: 'center'}}><button  className="modal_button_large">ПОМОЩЬ</button></a>
                 </Modal>
-                <Modal width="784px" height="312px" padding="32px 20px 16px 50px" open={aboutModal} onClose={() => setAboutModal(false)}>
+                <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={aboutModal} onClose={() => setAboutModal(false)}>
                     <div className="modal_header_large">
                         <label className="modal_header_label_large">О нас</label>
-                        <button className='modal_header_close' onClick={() => setAboutModal(false)}><img  src={cross_icon} alt='black-cross-icon'/></button>
+                        <button className='modal_header_close' onClick={() => setAboutModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
                     </div>
                     <p className="modal_text_large">
                         Bulkbuyz - официальный сайт,
