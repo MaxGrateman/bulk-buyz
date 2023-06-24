@@ -42,7 +42,7 @@ import Accordion from "../../interfaces/Accordion/Accordion";
     ];
 
     return (
-        <div className="support">
+        <div className="support" id="support">
             <div className="support_wrapper">
                 <label className="support_label">FAQ</label>
                 <p className="support_underlabel">Часто заводаемые вопросы</p>
