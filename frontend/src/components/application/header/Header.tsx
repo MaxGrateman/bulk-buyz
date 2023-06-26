@@ -92,7 +92,7 @@ const Header = () => {
                         Если ваша проблема уникальна, пожалуйста,
                         свяжитесь с нами!
                     </p>
-                    <a href='https://chat.digiseller.ru/asp/start.asp?fr=g&user=1097528&service=1&shop=1&lang=ru-RU' style={{alignSelf: 'center'}}><button  className="modal_button_large">ПОМОЩЬ</button></a>
+                    <a href='https://chat.digiseller.ru/asp/start.asp?fr=g&user=1097528&service=1&shop=1&lang=ru-RU' target="_blank" style={{alignSelf: 'center'}}><button  className="modal_button_large">ПОМОЩЬ</button></a>
                 </Modal>
                 <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={aboutModal} onClose={() => setAboutModal(false)}>
                     <div className="modal_header_large">
