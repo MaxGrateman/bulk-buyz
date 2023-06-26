@@ -2,7 +2,7 @@ import "./Cards.css"
 import ICard from "../../interfaces/ICard/ICard";
 import React, {useState} from "react";
 import steam_icon from '../../../assets/steam.svg'
-import geo_icon from '../../../assets/geo-point.svg'
+import steam_pack from '../../../assets/steam_pack.svg'
 import Modal from "../modal/Modal";
 import cross_icon from "../../../assets/modal-cross.svg";
 import cart_icon from "../../../assets/cart.svg";
@@ -18,7 +18,7 @@ function Cards() {
             <div className="cards_sublabel">Оформи покупку в несколько кликов</div>
             <div className="cards_wrapper">
                 <ICard width='560px' height='290px' background='linear-gradient(90deg, rgba(129, 106, 255, 0.6) 0.02%, rgba(170, 0, 255, 0.6) 100%)' padding='' borderRadius='25px' boxSizing='borderBox'>
-                    <label className="card_label">Смена региона в Steam на Казахстан</label>
+                    <label className="card_label">Смена региона в Steam</label>
                     <div className="card_wrapper">
                         <img src={steam_icon} alt='steam-img' className="card_icon_steam"/>
                         <div style={{ flexDirection: 'column', display: 'flex', justifyContent: 'space-around'}}>
@@ -28,9 +28,9 @@ function Cards() {
                     </div>
                 </ICard>
                 <ICard width='560px' height='290px' background='linear-gradient(90deg, rgba(129, 106, 255, 0.6) 0.02%, rgba(170, 0, 255, 0.6) 100%)' padding='' borderRadius='25px' boxSizing='borderBox'>
-                    <label className="card_label">Смена региона в Steam на Казахстан</label>
+                    <label className="card_label">Набор для смены региона Steam</label>
                     <div className="card_wrapper">
-                        <img src={geo_icon} alt='steam-img' className="card_icon_geo"/>
+                        <img src={steam_pack} alt='steam_pack-img' className="card_icon_geo" width={181} height={169}/>
                         <div style={{ flexDirection: 'column', display: 'flex', justifyContent: 'space-around'}}>
                             <button className="card_button">Описание</button>
                             <button className="card_button">Купить</button>
@@ -54,7 +54,7 @@ function Cards() {
 
                 </div>
                 <div className="modal_buy_buttons">
-                    <button className="modal_buy_button-close">Закрыть</button>
+                    <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>Закрыть</button>
                     <button className="modal_buy_button-next">Перейти к оплате</button>
                 </div>
             </Modal>

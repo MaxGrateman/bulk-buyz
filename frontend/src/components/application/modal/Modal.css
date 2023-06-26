@@ -171,7 +171,6 @@
 
 .modal_buy_button-close:hover {
     background: #d3d3d3;
-    font-size: 21px;
 }
 
 .modal_buy_button-next {
@@ -189,5 +188,4 @@
 .modal_buy_button-next:hover {
     background: #F0F0F0;
     color: #7C64FF;
-    font-size: 21px;
 }
