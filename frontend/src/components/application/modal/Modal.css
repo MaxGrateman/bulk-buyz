@@ -132,6 +132,21 @@
     text-align: center;
 }
 
+.modal_buy_main {
+    padding: 11px 18px 18px 37px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.modal_buy_name {
+    color: #000;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
 .modal_buy_close {
     width: 27px;
     height: 27px;
@@ -188,4 +203,42 @@
 .modal_buy_button-next:hover {
     background: #F0F0F0;
     color: #7C64FF;
+}
+
+.modal_buy_select {
+    width: 205px;
+    height: 39px;
+    border-radius: 15px;
+    background: #BB71F1;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 26px;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Montserrat, sans-serif;
+}
+
+.modal_buy_total {
+    color: #000;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.modal_buy_agree {
+    display: flex;
+    align-items: center;
+
+    color: #000;
+    font-size: 14px;
+    font-weight: 300;
+    user-select: none
+}
+
+.modal_buy_checkbox {
+    width: 16px;
+    height: 16px;
 }

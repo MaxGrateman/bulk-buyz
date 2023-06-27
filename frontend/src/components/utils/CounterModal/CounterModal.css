@@ -1,0 +1,30 @@
+.modal_counter {
+    width: 94px;
+    height: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+}
+
+.modal_counter_button {
+    height: 100%;
+    width: 30px;
+    outline: none;
+    border: none;
+    text-align: center;
+    user-select: none;
+
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    transition: ease-out 0.4s;
+}
+
+.modal_counter_count {
+    padding: 0 13px 0 13px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    user-select: none
+}
