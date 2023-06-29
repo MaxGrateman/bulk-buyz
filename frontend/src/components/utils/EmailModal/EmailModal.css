@@ -6,8 +6,9 @@
 
 .form_modal_text {
     color: #929292;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
+    margin-bottom: 3px;
 }
 
 .form_modal_input {

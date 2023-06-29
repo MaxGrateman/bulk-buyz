@@ -233,12 +233,23 @@
     align-items: center;
 
     color: #000;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
-    user-select: none
+    user-select: none;
 }
+
+/*.modal_buy_agree:hover {
+    text-decoration: underline;
+}*/
 
 .modal_buy_checkbox {
     width: 16px;
     height: 16px;
+}
+
+.modal_buy_text {
+    color: #000;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 5px;
 }

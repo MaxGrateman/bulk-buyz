@@ -5,7 +5,9 @@ const CounterModal = () => {
     const [count, setCount] = useState(1)
 
     const increment = () => {
-        setCount(count + 1);
+        if (count < 10) {
+            setCount(count + 1);
+        }
     };
 
     const decrement = () => {

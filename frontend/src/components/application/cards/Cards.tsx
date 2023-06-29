@@ -4,6 +4,7 @@ import Modal from "../modal/Modal";
 import EmailModal from "../../utils/EmailModal/EmailModal";
 import React, {useState} from "react";
 import CounterModal from "../../utils/CounterModal/CounterModal";
+import {SelectModal, SelectModalOption} from "../../utils/SelectModal/SelectModal";
 
 import steam_icon from '../../../assets/steam.svg'
 import steam_pack from '../../../assets/steam_pack.svg'
@@ -11,11 +12,34 @@ import cross_icon from "../../../assets/modal-cross.svg";
 import cart_icon from "../../../assets/cart.svg";
 
 
+
 function Cards() {
+
+    /*Варианты выбор селектора*/
+    const options: SelectModalOption[] = [
+        { value: 'option1', label: 'Казахстан', price: 100 },
+        { value: 'option2', label: 'Турция', price: 200 },
+        { value: 'option3', label: 'Аргентина', price: 300 },
+    ];
 
     {/* useStates которые отвечают для скрытие и раскрытие модальных окон */}
     const [descrModal, setDescrModal] = useState(false);
     const [buyModal, setBuyModal] = useState(false);
+
+    /* useStates которые отвечают за value и price выбраного селектора */
+    const [value, setValue] = useState<SelectModalOption | undefined>();
+    const [price, setPrice] = useState<number>(0);
+
+
+    /* функция которая отрабатывает выборанный селектор и кидает его цену */
+    function handleChange(option: SelectModalOption | undefined) {
+        setValue(option);
+        if (option) {
+            setPrice(option.price);
+        } else {
+            setPrice(0);
+        }
+    }
 
     return(
         <div className="cards" id="cards">
@@ -62,7 +86,7 @@ function Cards() {
                 </p>
             </Modal>
 
-            {/* Модальные окна КУПИТЬ*/}
+
             <Modal width="560px" height="325px" open={buyModal} onClose={() => setBuyModal(false)}>
                 <div className="modal_buy_header">
                     <img src={cart_icon} alt='cart-icon' width={21} height={21} className='modal_buy_icon'/>
@@ -74,18 +98,14 @@ function Cards() {
                         <img src={steam_icon} alt="small-icon-steam" width={40} height={40}/>
                         <p className="modal_buy_name">Смена региона в Steam</p>
                     </div>
-                    <select className="modal_buy_select" >
-                        <option hidden={true}>Выбор региона</option>
-                        <option className="modal_buy_option">Казахстан</option>
-                        <option className="modal_buy_option">Аргентина</option>
-                        <option className="modal_buy_option">Турция</option>
-                    </select>
+                    <SelectModal options={options} value={value} onChange={handleChange}/>
                     <EmailModal/>
-                    <p className="modal_buy_total">150 Р</p>
+                    {/* Цена каждого региона, прилетает с useState */}
+                    <p className="modal_buy_total">{price} Р</p>
                     <CounterModal/>
                     <p className="modal_buy_agree">
                         <input className="modal_buy_checkbox" type="checkbox" id="myCheckbox"/>
-                        <label htmlFor="myCheckbox">Я прочитал <button>описание</button></label>
+                        <button className="modal_buy_text"> Я прочитал описание</button>
                     </p>
                 </div>
                 <div className="modal_buy_buttons">
