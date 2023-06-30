@@ -243,13 +243,37 @@
 }*/
 
 .modal_buy_checkbox {
-    width: 16px;
-    height: 16px;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
 }
 
-.modal_buy_text {
-    color: #000;
-    font-size: 16px;
-    font-weight: 300;
-    padding-left: 5px;
+.modal_buy_checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.modal_buy_checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 19px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.modal_buy_checkbox:checked+label::before {
+    border-color: rgba(129, 106, 255, 1);
+    background-color: rgba(129, 106, 255, 1);
+    background-image: url("../../../assets/checkbox-icon.svg");
+    background-size: 15px 15px;
+}
+
+.modal_buy_checkbox:not(:disabled):not(:checked)+label:hover::before {
+    border-color: rgb(144, 123, 255);
 }

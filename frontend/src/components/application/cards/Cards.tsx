@@ -103,10 +103,8 @@ function Cards() {
                     {/* Цена каждого региона, прилетает с useState */}
                     <p className="modal_buy_total">{price} Р</p>
                     <CounterModal option={value} />
-                    <p className="modal_buy_agree">
-                        <input className="modal_buy_checkbox" type="checkbox" id="myCheckbox"/>
-                        <button className="modal_buy_text"> Я прочитал описание</button>
-                    </p>
+                    <input type="checkbox" className="modal_buy_checkbox" id="agree"/>
+                    <label htmlFor="agree">Я прочитал описание</label>
                 </div>
                 <div className="modal_buy_buttons">
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>Закрыть</button>
