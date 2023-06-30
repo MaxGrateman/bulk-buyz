@@ -19,7 +19,7 @@ const Modal: React.FC<ModalProps>= ({
              height,
              width,
              children,
-             padding
+             padding,
 } : any) => {
 
     const [scrollbarWidth, setScrollbarWidth] = useState(0);

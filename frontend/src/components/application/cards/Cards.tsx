@@ -24,6 +24,7 @@ function Cards() {
 
     {/* useStates которые отвечают для скрытие и раскрытие модальных окон */}
     const [descrModal, setDescrModal] = useState(false);
+    const [descrModalSecond, setDescrModalSecond] = useState(false);
     const [buyModal, setBuyModal] = useState(false);
 
     /* useStates которые отвечают за value и price выбраного селектора */
@@ -63,31 +64,15 @@ function Cards() {
                     <div className="card_wrapper">
                         <img src={steam_pack} alt='steam_pack-img' className="card_icon_geo" width={181} height={169}/>
                         <div style={{ flexDirection: 'column', display: 'flex', justifyContent: 'space-around'}}>
-                            <button className="card_button">Описание</button>
+                            <button className="card_button" onClick={() => setDescrModalSecond(true)}>Описание</button>
                             <button className="card_button">Купить</button>
                         </div>
                     </div>
                 </ICard>
             </div>
 
-
-            {/* Модальное окно ОПИСАНИЕ */}
-            <Modal width="784px" height="312px" open={descrModal} onClose={() => setDescrModal(false)} padding="33px 72px 8px" >
-                <div className="modal_header_large" style={{justifyContent: 'center'}}>
-                    <label className="modal_header_label_large" >Описание</label>
-                    <button className='modal_large_close' onClick={() => setDescrModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
-                </div>
-                <p className="modal_text_large" style={{textAlign: 'left'}}>
-                    Смена региона Steam - это одноразовая услуга.
-                    Полностью легально меняет регион вашего аккаунта.
-                    У вас появится возможность покупать игры,
-                    которые вы, по каким-либо причинам не можете
-                    приобрести в своей стране.
-                </p>
-            </Modal>
-
-
-            <Modal width="560px" height="325px" open={buyModal} onClose={() => setBuyModal(false)}>
+            {/* Модальное окно КУПИТЬ для первой карточки */}
+            <Modal width="560px" height="320px" open={buyModal} onClose={() => setBuyModal(false)}>
                 <div className="modal_buy_header">
                     <img src={cart_icon} alt='cart-icon' width={21} height={21} className='modal_buy_icon'/>
                     <label className="modal_header_label">Покупка</label>
@@ -104,13 +89,48 @@ function Cards() {
                     <p className="modal_buy_total">{price} Р</p>
                     <CounterModal option={value} />
                     <input type="checkbox" className="modal_buy_checkbox" id="agree"/>
-                    <label htmlFor="agree">Я прочитал описание</label>
+                    <label htmlFor="agree">Я прочитал <button onClick={() => setDescrModal(true)} style={{color: 'rgba(124, 100, 255, 1)', marginLeft: '3px'}}>описание</button></label>
                 </div>
                 <div className="modal_buy_buttons">
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>Закрыть</button>
                     <button className="modal_buy_button-next">Перейти к оплате</button>
                 </div>
             </Modal>
+
+            {/* Модальное окно ОПИСАНИЕ для первой карточки */}
+            <Modal width="784px" height="312px" open={descrModal} onClose={() => setDescrModal(false)} padding="33px 72px 8px" >
+                <div className="modal_header_large" style={{justifyContent: 'center'}}>
+                    <label className="modal_header_label_large" >Описание</label>
+                    <button className='modal_large_close' onClick={() => setDescrModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
+                </div>
+                <p className="modal_text_large" style={{textAlign: 'left'}}>
+                    Смена региона Steam - это одноразовая услуга.
+                    Полностью легально меняет регион вашего аккаунта.
+                    У вас появится возможность покупать игры,
+                    которые вы, по каким-либо причинам не можете
+                    приобрести в своей стране.
+                </p>
+            </Modal>
+
+            {/* Модальное окно ОПИСАНИЕ для второй карточки */}
+            <Modal width="784px" height="312px" open={descrModalSecond} onClose={() => setDescrModalSecond(false)} padding="23px 62px" >
+                <div className="modal_header_large" style={{justifyContent: 'center'}}>
+                    <label className="modal_header_label_large" >Описание</label>
+                    <button className='modal_large_close' onClick={() => setDescrModalSecond(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>
+                </div>
+                <p className="modal_text_large" style={{textAlign: 'left'}}>
+                    В данный набор входит:<br/>
+                    1) Карта, подходящая для смены региона<br/>
+                    2) Инструкция по смене региона<br/>
+                    3) Личный VPN - сервер и инструкция<br/>
+                </p>
+                <p className="modal_text_large" style={{textAlign: 'left'}}>
+                    А также поддержка от продавца при проблемах.
+                </p>
+
+            </Modal>
+
+
         </div>
     )
 }
