@@ -13,7 +13,7 @@
     padding: 15px;
     box-sizing: border-box;
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -42,9 +42,10 @@
     border: none;
     outline: none;
     width: 209px;
-    left: 37px;
-    top: 155px;
+    height: 85px;
     display: none;
+    left: 37px;
+    top: 152px;
     z-index: 100;
     box-sizing: border-box;
 }
@@ -53,7 +54,7 @@
     width: 195px;
     height: 1px;
     background-color: white;
-    margin: 3px 5px;
+    margin: 0 auto;
 }
 
 .select_options_show {
@@ -61,6 +62,6 @@
 }
 
 .select_option {
-    padding: 6px;
+    padding: 3px;
     cursor: pointer;
 }

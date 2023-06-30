@@ -98,11 +98,11 @@ function Cards() {
                         <img src={steam_icon} alt="small-icon-steam" width={40} height={40}/>
                         <p className="modal_buy_name">Смена региона в Steam</p>
                     </div>
-                    <SelectModal options={options} value={value} onChange={handleChange}/>
-                    <EmailModal/>
+                    <SelectModal options={options} value={value} onChange={handleChange} />
+                    <EmailModal />
                     {/* Цена каждого региона, прилетает с useState */}
                     <p className="modal_buy_total">{price} Р</p>
-                    <CounterModal/>
+                    <CounterModal option={value} />
                     <p className="modal_buy_agree">
                         <input className="modal_buy_checkbox" type="checkbox" id="myCheckbox"/>
                         <button className="modal_buy_text"> Я прочитал описание</button>
