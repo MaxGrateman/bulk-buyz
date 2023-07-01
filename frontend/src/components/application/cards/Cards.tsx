@@ -2,7 +2,7 @@ import "./Cards.css"
 import ICard from "../../interfaces/ICard/ICard";
 import Modal from "../modal/Modal";
 import EmailModal from "../../utils/EmailModal/EmailModal";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import CounterModal from "../../utils/CounterModal/CounterModal";
 import {SelectModal, SelectModalOption} from "../../utils/SelectModal/SelectModal";
 
@@ -40,6 +40,10 @@ function Cards() {
         } else {
             setPrice(0);
         }
+    }
+
+    function handleCountChange(updatedPrice: number) {
+        setPrice(updatedPrice);
     }
 
     return(
@@ -87,9 +91,9 @@ function Cards() {
                     <EmailModal />
                     {/* Цена каждого региона, прилетает с useState */}
                     <p className="modal_buy_total">{price} Р</p>
-                    <CounterModal option={value} />
+                    <CounterModal option={value} onCountChange={handleCountChange} />
                     <input type="checkbox" className="modal_buy_checkbox" id="agree"/>
-                    <label htmlFor="agree">Я прочитал <button onClick={() => setDescrModal(true)} style={{color: 'rgba(124, 100, 255, 1)', marginLeft: '3px'}}>описание</button></label>
+                    <label htmlFor="agree">Я прочитал описание</label>
                 </div>
                 <div className="modal_buy_buttons">
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>Закрыть</button>
