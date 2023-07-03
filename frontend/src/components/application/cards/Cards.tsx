@@ -1,10 +1,13 @@
 import "./Cards.css"
+import "./../modal/ModalBuy.css"
+
 import ICard from "../../interfaces/ICard/ICard";
 import Modal from "../modal/Modal";
 import EmailModal from "../../utils/EmailModal/EmailModal";
 import React, {useEffect, useState} from "react";
 import CounterModal from "../../utils/CounterModal/CounterModal";
 import {SelectModal, SelectModalOption} from "../../utils/SelectModal/SelectModal";
+import IWarning from "../../interfaces/IWarning/IWarning";
 
 import steam_icon from '../../../assets/steam.svg'
 import steam_pack from '../../../assets/steam_pack.svg'
@@ -31,6 +34,8 @@ function Cards() {
     const [value, setValue] = useState<SelectModalOption | undefined>();
     const [price, setPrice] = useState<number>(0);
 
+    const [showWarningRegion, setShowWarningRegion] = useState(false);
+
 
     /* функция которая отрабатывает выборанный селектор и кидает его цену */
     function handleChange(option: SelectModalOption | undefined) {
@@ -46,12 +51,34 @@ function Cards() {
         setPrice(updatedPrice);
     }
 
+    const handleButtonClick = () => {
+        if (!value) {
+            setShowWarningRegion(true);
+            setTimeout(() => {
+                setShowWarningRegion(false);
+            }, 3000);
+        }
+    };
+
+    useEffect(() => {
+        if (value) {
+            setShowWarningRegion(false);
+        }
+    }, [value]);
+
+
     return(
         <div className="cards" id="cards">
             <label className="cards_label">Смена региона Steam</label>
             <div className="cards_sublabel">Оформи покупку в несколько кликов</div>
             <div className="cards_wrapper">
-
+                {/* Валидационые ворнинги для модального окна покупок */}
+                    <IWarning backgroundColor="rgba(232, 70, 70)">
+                        <p>Введен некорректный e-mail</p>
+                    </IWarning>
+                    <IWarning open={showWarningRegion} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
+                        <p>Не выбран регион </p>
+                    </IWarning>
                 {/* Карточки товаров */}
                 <ICard width='560px' height='290px' background='linear-gradient(90deg, rgba(129, 106, 255, 0.6) 0.02%, rgba(170, 0, 255, 0.6) 100%)' padding='' borderRadius='25px' boxSizing='borderBox'>
                     <label className="card_label">Смена региона в Steam</label>
@@ -84,7 +111,7 @@ function Cards() {
                 </div>
                 <div className="modal_buy_main">
                     <div style={{display: 'flex', flexDirection: 'row', gap: '12px', alignItems: 'center'}}>
-                        <img src={steam_icon} alt="small-icon-steam" width={40} height={40}/>
+                        <img src={steam_icon} alt="small-icon-steam" width={39} height={39}/>
                         <p className="modal_buy_name">Смена региона в Steam</p>
                     </div>
                     <SelectModal options={options} value={value} onChange={handleChange} />
@@ -97,7 +124,7 @@ function Cards() {
                 </div>
                 <div className="modal_buy_buttons">
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>Закрыть</button>
-                    <button className="modal_buy_button-next">Перейти к оплате</button>
+                    <button className="modal_buy_button-next" onClick={handleButtonClick}>Перейти к оплате</button>
                 </div>
             </Modal>
 
@@ -131,10 +158,7 @@ function Cards() {
                 <p className="modal_text_large" style={{textAlign: 'left'}}>
                     А также поддержка от продавца при проблемах.
                 </p>
-
             </Modal>
-
-
         </div>
     )
 }

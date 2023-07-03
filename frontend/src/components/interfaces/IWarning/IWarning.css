@@ -1,0 +1,32 @@
+.warning_container {
+    position: absolute;
+    right: 100px;
+    top: 500px;
+    padding: 18px 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+
+    z-index: 100;
+}
+
+.warning_container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.warning_container.hide {
+    opacity: 0;
+}
+
+.warning_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.warning_close {
+    font-size: 14px;
+    font-weight: 300;
+}
