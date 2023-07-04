@@ -10,11 +10,11 @@
     }
   ],
   "require": {
-    "guzzlehttp/guzzle": "^7.5",
     "ext-curl": "*",
     "ext-json": "*",
     "phpmailer/phpmailer": "^6.8",
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-xdebug": "*"
   },
   "autoload": {
     "psr-4": {
