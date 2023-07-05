@@ -13,16 +13,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $selectedProduct = $_POST['product'];
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $query = "INSERT INTO users (email, name, variant, price, time) VALUES ('Смена региона', '$selectedProduct', '$email', '999')";
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $query = "INSERT INTO users (email, name, variant, price, time) VALUES (:email, 'Test', :selectedProduct, '228', NOW())";
         $stmt = $database->prepare($query);
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':selectedProduct', $selectedProduct);
         $stmt->execute();
-        $count = $stmt->fetchColumn();
-        echo "E-mail записан в БД";
+        $count = $stmt->rowCount();
+        if ($count > 0) {
+            echo "E-mail записан в БД";
+        } else {
+            echo "Произошла ошибка при записи в БД";
+        }
     } else {
-        echo 'Что-то идёт не по плану';
+        echo 'Некорректный адрес электронной почты';
     }
-
-
 }
