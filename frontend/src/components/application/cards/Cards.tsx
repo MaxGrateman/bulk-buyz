@@ -4,7 +4,7 @@ import "./../modal/ModalBuy.css"
 import ICard from "../../interfaces/ICard/ICard";
 import Modal from "../modal/Modal";
 import EmailModal from "../../utils/EmailModal/EmailModal";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import CounterModal from "../../utils/CounterModal/CounterModal";
 import {SelectModal, SelectModalOption} from "../../utils/SelectModal/SelectModal";
 import IWarning from "../../interfaces/IWarning/IWarning";
@@ -34,7 +34,9 @@ function Cards() {
     const [value, setValue] = useState<SelectModalOption | undefined>();
     const [price, setPrice] = useState<number>(0);
 
+    const [isChecked, setIsChecked] = useState(false);
     const [showWarningRegion, setShowWarningRegion] = useState(false);
+    const timerRef = useRef<number | null>(null);
 
 
     /* функция которая отрабатывает выборанный селектор и кидает его цену */
@@ -51,12 +53,25 @@ function Cards() {
         setPrice(updatedPrice);
     }
 
+    const handleCheckboxChange = (event : any) => {
+        setIsChecked(event.target.checked);
+    };
+
     const handleButtonClick = () => {
+        const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
         if (!value) {
             setShowWarningRegion(true);
-            setTimeout(() => {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current);
+            }
+            timerRef.current = window.setTimeout(() => {
                 setShowWarningRegion(false);
             }, 3000);
+        }
+        if (!isChecked) {
+            checkboxLabel.style.color = 'red';
+        } else {
+            checkboxLabel.style.color = 'black';
         }
     };
 
@@ -72,13 +87,12 @@ function Cards() {
             <label className="cards_label">Смена региона Steam</label>
             <div className="cards_sublabel">Оформи покупку в несколько кликов</div>
             <div className="cards_wrapper">
+
                 {/* Валидационые ворнинги для модального окна покупок */}
-                    <IWarning backgroundColor="rgba(232, 70, 70)">
-                        <p>Введен некорректный e-mail</p>
-                    </IWarning>
                     <IWarning open={showWarningRegion} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
                         <p>Не выбран регион </p>
                     </IWarning>
+
                 {/* Карточки товаров */}
                 <ICard width='560px' height='290px' background='linear-gradient(90deg, rgba(129, 106, 255, 0.6) 0.02%, rgba(170, 0, 255, 0.6) 100%)' padding='' borderRadius='25px' boxSizing='borderBox'>
                     <label className="card_label">Смена региона в Steam</label>
@@ -119,7 +133,13 @@ function Cards() {
                     {/* Цена каждого региона, прилетает с useState */}
                     <p className="modal_buy_total">{price} Р</p>
                     <CounterModal option={value} onCountChange={handleCountChange} />
-                    <input type="checkbox" className="modal_buy_checkbox" id="agree"/>
+                    <input
+                        type="checkbox"
+                        className="modal_buy_checkbox"
+                        id="agree"
+                        checked={isChecked}
+                        onChange={handleCheckboxChange}
+                    />
                     <label htmlFor="agree">Я прочитал описание</label>
                 </div>
                 <div className="modal_buy_buttons">

@@ -114,10 +114,6 @@
     user-select: none;
 }
 
-/*.modal_buy_agree:hover {
-    text-decoration: underline;
-}*/
-
 .modal_buy_checkbox {
     position: absolute;
     z-index: -1;
@@ -128,6 +124,7 @@
     display: inline-flex;
     align-items: center;
     user-select: none;
+    cursor: pointer;
 }
 .modal_buy_checkbox+label::before {
     content: '';

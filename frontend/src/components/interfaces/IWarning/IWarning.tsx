@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode, useEffect} from 'react';
+import React, {ReactElement, ReactNode, useEffect, useState} from 'react';
 import './IWarning.css'
 import alert_icon from "../../../assets/alert_icon.svg";
 
@@ -16,10 +16,13 @@ const IWarning: React.FC<IWarningProps> = ({
     open,
                                            }) => {
 
+
+
     if (!open) return null;
 
+
     return (
-        <div className={`warning_container ${open ?"show" : "hide"}`} style={{backgroundColor}}>
+        <div className="warning_container" style={{backgroundColor}}>
             <div className="warning_wrapper">
                 <img src={alert_icon} alt="alert_icon" width={25} height={25}/>
                 {children}
