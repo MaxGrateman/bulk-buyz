@@ -104,6 +104,6 @@ function getLastPayId($project_id) {
     foreach ($current_pay as $payment) {
         return $payment['pay_id'] + 1;
     }
-    return null; // Возвращаем значение по умолчанию, если не удалось получить pay_id
+    return sprintf('%d%d', time(), rand(10, 99)); // Генерируем рандомное, Если не удалось получить
 }
 // Нужно будет дописать/подкорректировать
