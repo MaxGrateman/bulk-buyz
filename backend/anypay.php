@@ -63,6 +63,7 @@ function getPayout($payout_id, $payout_type, $amount, $wallet)
     $url = "https://anypay.io/api/create-payout/$API_ID?payout_id=$payout_id&payout_type=$payout_type&amount=$amount&wallet=$wallet&sign=$sign";
     return file_get_contents($url);
 }
+
 // Добавить описание нужно будет
 
 function getPayouts(): string
@@ -95,9 +96,11 @@ function checkPay($project_id, $comment)
 
     return [false, []];
 }
+
 // Не закончена
 
-function getLastPayId($project_id) {
+function getLastPayId($project_id)
+{
     $json_dump = json_decode(getPayments($project_id), true);
     $current_pay = $json_dump["result"]["payments"];
 

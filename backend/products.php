@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Headers: application/json");
 header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Content-Type: application/json"); // Устанавливаем заголовок Content-Type
 
 require_once __DIR__ . '/credentials.php';
 require_once __DIR__ . '/DatabaseConnection.php';
@@ -13,5 +14,10 @@ $query = 'SELECT * FROM products';
 $statement = $database->prepare($query);
 $statement->execute();
 
-$products = $statement->fetchAll(PDO::FETCH_ASSOC);
-var_dump($products);
+$products = [];
+
+while ($product = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $products[] = $product;
+}
+
+echo json_encode($products);
