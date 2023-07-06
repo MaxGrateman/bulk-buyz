@@ -39,12 +39,6 @@ const EmailForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder='E-mail указанный при оплате'
             />
-            {/*<div>
-                <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                ></textarea>
-            </div>*/}
             <button type="submit" className="modal_wrapper_button">Отправить</button>
         </form>
     );

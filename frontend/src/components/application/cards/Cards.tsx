@@ -1,7 +1,7 @@
 import "./Cards.css"
 import "./../modal/ModalBuy.css"
 
-import ICard from "../../interfaces/ICard/ICard";
+import CardList from "../../interfaces/CardList/CardList";
 import Modal from "../modal/Modal";
 import EmailModal from "../../utils/EmailModal/EmailModal";
 import React, {useEffect, useRef, useState} from "react";
@@ -13,10 +13,38 @@ import steam_icon from '../../../assets/steam.svg'
 import steam_pack from '../../../assets/steam_pack.svg'
 import cross_icon from "../../../assets/modal-cross.svg";
 import cart_icon from "../../../assets/cart.svg";
-
+import {ICard} from "../../types/types";
+import axios from "axios";
 
 
 function Cards() {
+    const [cards, setCards] = useState<ICard[]>([])
+
+    interface CardsData {
+        card: ICard[];
+    }
+
+    useEffect(() => {
+        fetchCards();
+    }, [])
+
+    async function fetchCards() {
+        try {
+            const response = await axios.get<ICard[]>(
+                `http://localhost:8080/backend/products.php`,
+                {
+                    responseType: 'json',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+            const cardsData = response.data;
+            setCards(cardsData || []);
+        } catch (e) {
+            alert(e);
+        }
+    }
 
     /*Варианты выбор селектора*/
     const options: SelectModalOption[] = [
@@ -47,6 +75,7 @@ function Cards() {
         } else {
             setPrice(0);
         }
+        console.log(option);
     }
 
     function handleCountChange(updatedPrice: number) {
@@ -59,6 +88,10 @@ function Cards() {
 
     const handleButtonClick = () => {
         const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
+        const inputFocus = document.querySelector('.form_modal_input') as HTMLInputElement;
+        if (!inputFocus.value && document.activeElement !== inputFocus) {
+            inputFocus.focus();
+        }
         if (!value) {
             setShowWarningRegion(true);
             if (timerRef.current) {
@@ -94,13 +127,14 @@ function Cards() {
                     </IWarning>
 
                 {/* Карточки товаров */}
-                <ICard width='560px' height='290px' background='linear-gradient(90deg, rgba(129, 106, 255, 0.6) 0.02%, rgba(170, 0, 255, 0.6) 100%)' padding='' borderRadius='25px' boxSizing='borderBox'>
+                <CardList cards={cards}/>
+
+                {/*<ICard width='560px' height='290px' background='linear-gradient(90deg, rgba(129, 106, 255, 0.6) 0.02%, rgba(170, 0, 255, 0.6) 100%)' padding='' borderRadius='25px' boxSizing='borderBox'>
                     <label className="card_label">Смена региона в Steam</label>
                     <div className="card_wrapper">
                         <img src={steam_icon} alt='steam-img' className="card_icon_steam"/>
                         <div style={{ flexDirection: 'column', display: 'flex', justifyContent: 'space-around'}}>
-                            <button className="card_button" onClick={() => setDescrModal(true)}>Описание</button>
-                            <button className="card_button" onClick={() => setBuyModal(true)}>Купить</button>
+
                         </div>
                     </div>
                 </ICard>
@@ -113,7 +147,7 @@ function Cards() {
                             <button className="card_button">Купить</button>
                         </div>
                     </div>
-                </ICard>
+                </ICard>*/}
             </div>
 
             {/* Модальное окно КУПИТЬ для первой карточки */}
@@ -129,7 +163,7 @@ function Cards() {
                         <p className="modal_buy_name">Смена региона в Steam</p>
                     </div>
                     <SelectModal options={options} value={value} onChange={handleChange} />
-                    <EmailModal />
+                    <EmailModal onSubmit={handleButtonClick}/>
                     {/* Цена каждого региона, прилетает с useState */}
                     <p className="modal_buy_total">{price} Р</p>
                     <CounterModal option={value} onCountChange={handleCountChange} />
@@ -144,7 +178,7 @@ function Cards() {
                 </div>
                 <div className="modal_buy_buttons">
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>Закрыть</button>
-                    <button className="modal_buy_button-next" onClick={handleButtonClick}>Перейти к оплате</button>
+                    <button type="submit" className="modal_buy_button-next" onClick={handleButtonClick}>Перейти к оплате</button>
                 </div>
             </Modal>
 

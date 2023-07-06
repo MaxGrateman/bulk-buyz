@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, ReactChildren, ReactElement, ReactNode} from 'react';
 import {IReview} from "../../types/types";
 import './ReviewList.css'
 
@@ -7,8 +7,6 @@ interface ReviewsListProps {
 }
 
 const ReviewList: FC<ReviewsListProps> = ({reviews}) => {
-
-    const reviewsArray = Array.isArray(reviews) ? reviews : [];
 
     return (
         <div className="comment_wrapper">
