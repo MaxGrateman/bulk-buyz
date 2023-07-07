@@ -1,6 +1,6 @@
-import React, {FC, ReactElement, ReactNode} from 'react';
 import {ICard} from "../../types/types";
 import './CardList.css'
+import { FC, useState, useEffect } from 'react';
 
 interface CardListProps {
     cards: ICard[];
@@ -15,8 +15,8 @@ const CardList: FC<CardListProps> = ({ cards}) => {
                     <div className="card_content">
                         <img src={card.img} alt="product-image" className="card_image"/>
                         <div className="card_button_wrapper">
-                            <button className="card_button" onClick={() => setDescrModal(true)}>Описание</button>
-                            <button className="card_button" onClick={() => setBuyModal(true)}>Купить</button>
+                            <button className="card_button">Описание</button>
+                            <button className="card_button">Купить</button>
                         </div>
                     </div>
                 </div>

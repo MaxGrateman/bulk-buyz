@@ -103,6 +103,10 @@
     color: transparent;
 }
 
+.modal_wrapper_input:focus {
+    border: 2px solid #816AFF;
+}
+
 .modal_wrapper_button {
     width: 296px;
     height: 32px;

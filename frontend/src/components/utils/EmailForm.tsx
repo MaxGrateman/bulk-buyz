@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from "axios";
+import IWarning from "../interfaces/IWarning/IWarning";
 
 const EmailForm = () => {
     const [email, setEmail] = useState(' ')
@@ -7,12 +8,6 @@ const EmailForm = () => {
     const handleSubmit = async (e : any) => {
         e.preventDefault();
         axios.defaults.headers.post['Content-Type'] = 'application/json'
-
-        // Валидация формы
-        if ( !email ) {
-            alert('Пожалуйста, заполните все поля формы');
-            return;
-        }
         try {
             // Отправка данных
             const response = await axios.post('http://localhost:8080/backend/email.php',
@@ -28,6 +23,14 @@ const EmailForm = () => {
         }
     };
 
+    // Валидация формы
+    const handleClick = () => {
+        const inputFocus = document.querySelector('.modal_wrapper_input') as HTMLInputElement;
+        if (!inputFocus.value && document.activeElement !== inputFocus) {
+            inputFocus.focus();
+        }
+    }
+
 
 
     return (
@@ -38,8 +41,9 @@ const EmailForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder='E-mail указанный при оплате'
+
             />
-            <button type="submit" className="modal_wrapper_button">Отправить</button>
+            <button type="submit" className="modal_wrapper_button" onClick={handleClick}>Отправить</button>
         </form>
     );
 };
