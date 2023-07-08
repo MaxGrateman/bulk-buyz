@@ -28,6 +28,7 @@
 .card_image {
     width: 168px;
     height: 168px;
+    pointer-events: none;
 }
 
 .card_button_wrapper {
