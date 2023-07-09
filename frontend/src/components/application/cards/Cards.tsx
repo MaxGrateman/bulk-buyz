@@ -54,8 +54,7 @@ function Cards() {
                     },
                 }
             );
-            const cardsData = response.data;
-            console.log(cardsData); // Log the response data to verify its structure
+            const cardsData = response.data;// Log the response data to verify its structure
             setCards(cardsData || []);
             if (cardsData && cardsData.length > 0) {
                 setSelectedCard(cardsData[0]);
@@ -90,12 +89,11 @@ function Cards() {
         } else {
             setPrice(0);
         }
-        console.log(option);
     }
 
     function handleCountChange(updatedPrice: number, newCount: number) {
         setPrice(updatedPrice);
-        setCount(newCount)
+        setCount(newCount);
     }
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,7 +110,7 @@ function Cards() {
         }
     }, [value]);
 
-    const handleButtonClick = async () => {
+    const handleButtonClick = async (countValue: number) => {
         const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
         const inputFocus = document.querySelector('.form_modal_input') as HTMLInputElement;
         if (!inputFocus.value && document.activeElement !== inputFocus) {
@@ -143,10 +141,19 @@ function Cards() {
         }
         {/* post-запрос на отправку бэкенду */}
         try {
-            const response = await axios.post('http://localhost:8080/backend/processForm.php', formData);
-            console.log(response.data); // Обработка ответа от бэкенда
+            const response = await axios.post(
+                'http://localhost:8080/backend/processForm.php',
+                formData,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+            console.log(response.data);
+            console.log(formData);
         } catch (error) {
-            console.error(error); // Обработка ошибок
+            console.error(error);
         }
     }
 
@@ -181,8 +188,8 @@ function Cards() {
                      </div>
                     <p className="modal_buy_total">{price} Р</p>
                     <SelectModal options={selectedCard?.variants || []} value={value} onChange={handleChange} />
-                    <CounterModal option={value} onCountChange={handleCountChange} />
-                    <EmailModal value={userEmail} onSubmit={handleButtonClick} onChange={handleEmailChange}/>
+                    <CounterModal option={value} onCountChange={handleCountChange} handleButtonClick={handleButtonClick} count={count}/>
+                    <EmailModal value={userEmail} onChange={handleEmailChange}/>
                     <input
                         type="checkbox"
                         className="modal_buy_checkbox"
@@ -196,7 +203,7 @@ function Cards() {
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>
                         Закрыть
                     </button>
-                    <button type="submit" className="modal_buy_button-next" onClick={handleButtonClick}>
+                    <button type="submit" className="modal_buy_button-next" onClick={() => handleButtonClick(count)}>
                         Перейти к оплате
                     </button>
                 </div>

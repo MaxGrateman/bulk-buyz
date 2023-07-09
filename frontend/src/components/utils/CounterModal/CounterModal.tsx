@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import './CounterModal.css'
 import {SelectModalOption} from "../SelectModal/SelectModal";
 
-
 const CounterModal = ({ option, onCountChange }: any) => {
     const [count, setCount] = useState(1);
 
@@ -53,5 +52,7 @@ const CounterModal = ({ option, onCountChange }: any) => {
         </div>
     );
 };
+
+
 
 export default CounterModal;
