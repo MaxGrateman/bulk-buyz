@@ -74,6 +74,8 @@ function Cards() {
     /* useStates которые отвечают за value и price выбраного селектора */
     const [value, setValue] = useState<SelectModalOption | undefined>();
     const [price, setPrice] = useState<number>(0);
+    const [userEmail, setUserEmail] = useState('');
+    const [count, setCount] = useState(1);
 
     const [isChecked, setIsChecked] = useState(false);
     const [showWarningRegion, setShowWarningRegion] = useState(false);
@@ -91,15 +93,26 @@ function Cards() {
         console.log(option);
     }
 
-    function handleCountChange(updatedPrice: number) {
+    function handleCountChange(updatedPrice: number, newCount: number) {
         setPrice(updatedPrice);
+        setCount(newCount)
     }
+
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setUserEmail(event.target.value);
+    };
 
     const handleCheckboxChange = (event : any) => {
         setIsChecked(event.target.checked);
     };
 
-    const handleButtonClick = () => {
+    useEffect(() => {
+        if (value) {
+            setShowWarningRegion(false);
+        }
+    }, [value]);
+
+    const handleButtonClick = async () => {
         const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
         const inputFocus = document.querySelector('.form_modal_input') as HTMLInputElement;
         if (!inputFocus.value && document.activeElement !== inputFocus) {
@@ -119,13 +132,24 @@ function Cards() {
         } else {
             checkboxLabel.style.color = 'black';
         }
-    };
 
-    useEffect(() => {
-        if (value) {
-            setShowWarningRegion(false);
+        {/*Формируем информацию для отправки*/}
+        const formData = {
+            email: userEmail,
+            selectorValue: value,
+            cardName: selectedCard?.name,
+            quantity: count,
+            totalPrice: price,
         }
-    }, [value]);
+        {/* post-запрос на отправку бэкенду */}
+        try {
+            const response = await axios.post('http://localhost:8080/backend/processForm.php', formData);
+            console.log(response.data); // Обработка ответа от бэкенда
+        } catch (error) {
+            console.error(error); // Обработка ошибок
+        }
+    }
+
 
 
     return (
@@ -158,7 +182,7 @@ function Cards() {
                     <p className="modal_buy_total">{price} Р</p>
                     <SelectModal options={selectedCard?.variants || []} value={value} onChange={handleChange} />
                     <CounterModal option={value} onCountChange={handleCountChange} />
-                    <EmailModal onSubmit={handleButtonClick} />
+                    <EmailModal value={userEmail} onSubmit={handleButtonClick} onChange={handleEmailChange}/>
                     <input
                         type="checkbox"
                         className="modal_buy_checkbox"
