@@ -12,18 +12,16 @@
 
 .modal_buy_main {
     height: 204px;
-    padding: 11px 18px 18px 37px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
+    padding: 11px 18px 18px 30px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: end
 }
 
 .modal_buy_name {
     color: #000;
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .modal_buy_close {
@@ -88,7 +86,7 @@
     background: #BB71F1;
     color: #FFFFFF;
     text-align: center;
-    margin-top: 26px;
+    margin-top: 20px;
     border: none;
     outline: none;
 

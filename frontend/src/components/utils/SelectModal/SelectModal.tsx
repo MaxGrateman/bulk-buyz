@@ -3,8 +3,9 @@ import {useState} from "react";
 import React from "react";
 
 export type SelectModalOption = {
+    id: number;
     value: string;
-    label: string;
+    variant: string;
     price: number;
 };
 
@@ -30,7 +31,7 @@ export function SelectModal({ value, options, onChange }: SelectModalProps) {
             tabIndex={0}
             className="select_container"
         >
-            <span className="select_value">{selectedValue ? selectedValue.label : 'Выберите регион'}</span>
+            <span className="select_value">{selectedValue ? selectedValue.variant : 'Выберите регион'}</span>
             <div className={`select_caret ${isOpen ? 'caret_rotate' : ''}`}></div>
             <ul className={`select_options ${isOpen ? 'select_options_show' : ''}`}>
                 {options.map((option, index) => (
@@ -43,7 +44,7 @@ export function SelectModal({ value, options, onChange }: SelectModalProps) {
                             }}
                             className="select_option"
                         >
-                            {option.label}
+                            {option.variant}
                         </li>
                         {index !== options.length - 1 && <li className="select_divider"></li>}
                     </React.Fragment>

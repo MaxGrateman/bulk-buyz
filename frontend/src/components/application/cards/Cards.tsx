@@ -9,7 +9,6 @@ import CounterModal from "../../utils/CounterModal/CounterModal";
 import {SelectModal, SelectModalOption} from "../../utils/SelectModal/SelectModal";
 import IWarning from "../../interfaces/IWarning/IWarning";
 
-import steam_icon from '../../../assets/steam.svg'
 import cross_icon from "../../../assets/modal-cross.svg";
 import cart_icon from "../../../assets/cart.svg";
 import {ICard, IVariant} from "../../types/types";
@@ -152,19 +151,14 @@ function Cards() {
                     </button>
                 </div>
                 <div className="modal_buy_main">
-                    {/* Use the "variants" data from the selected card */}
-                    {selectedVariant && (
-                        <>
-                            <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', alignItems: 'center' }}>
-                                <img src={selectedVariant.img} alt="small-icon-steam" width={39} height={39} />
-                                <p className="modal_buy_name">{selectedCard?.name}</p>
-                            </div>
-                            <p className="modal_buy_total">{price} Р</p>
-                        </>
-                    )}
+                     <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', alignItems: 'center', textAlign: 'left' }}>
+                         <img src={selectedCard?.img} alt="small-icon-steam" width={39} height={39} />
+                         <p className="modal_buy_name">{selectedCard?.name}</p>
+                     </div>
+                    <p className="modal_buy_total">{price} Р</p>
                     <SelectModal options={selectedCard?.variants || []} value={value} onChange={handleChange} />
-                    <EmailModal onSubmit={handleButtonClick} />
                     <CounterModal option={value} onCountChange={handleCountChange} />
+                    <EmailModal onSubmit={handleButtonClick} />
                     <input
                         type="checkbox"
                         className="modal_buy_checkbox"
