@@ -1,8 +1,11 @@
 import React, {useEffect, FC, ReactElement, ReactNode, useState} from 'react';
 import "./Modal.css"
 import "./ModalLarge.css"
-import cart_icon from '../../../assets/cart.svg'
-import cross_icon from '../../../assets/cross.svg'
+
+export enum ModalVariant {
+    white = 'white',
+    transparent='transparent'
+}
 
 interface ModalProps {
     width: string,
@@ -11,6 +14,7 @@ interface ModalProps {
     open: boolean,
     onClose: any,
     padding?: string,
+    variant?: ModalVariant;
 }
 
 const Modal: React.FC<ModalProps>= ({
@@ -20,6 +24,7 @@ const Modal: React.FC<ModalProps>= ({
              width,
              children,
              padding,
+             variant
 } : any) => {
 
     const [scrollbarWidth, setScrollbarWidth] = useState(0);
@@ -61,7 +66,10 @@ const Modal: React.FC<ModalProps>= ({
 
     return (
         <div onClick={onClose} className="modal_overlay">
-            <div onClick={(e) => e.stopPropagation()} className="modal_content" style={{ width, height, padding}}>
+            <div onClick={(e) => e.stopPropagation()}
+                 className="modal_content"
+                 style={{ width, height, padding, background: variant === ModalVariant.transparent ? 'none' : '#F9F9F9'}}
+            >
                 {children}
             </div>
         </div>

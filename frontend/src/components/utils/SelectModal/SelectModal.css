@@ -42,10 +42,10 @@
     border: none;
     outline: none;
     width: 209px;
-    height: 85px;
+    max-height: 85px;
     display: none;
-    left: 37px;
-    top: 152px;
+    left: 30px;
+    top: 155px;
     z-index: 100;
     box-sizing: border-box;
 }

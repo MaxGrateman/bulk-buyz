@@ -9,6 +9,7 @@ export interface IVariant {
     img: string;
     price: number;
     variant: string;
+    value: string;
 }
 
 export interface ICard {

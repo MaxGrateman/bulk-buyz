@@ -2,7 +2,7 @@ import "./Cards.css"
 import "./../modal/ModalBuy.css"
 
 import CardList from "../../interfaces/CardList/CardList";
-import Modal from "../modal/Modal";
+import Modal, {ModalVariant} from "../modal/Modal";
 import EmailModal from "../../utils/EmailModal/EmailModal";
 import React, {useEffect, useRef, useState} from "react";
 import CounterModal from "../../utils/CounterModal/CounterModal";
@@ -142,7 +142,7 @@ function Cards() {
             <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
 
             {/* Модальное окно КУПИТЬ для карточки */}
-            <Modal width="560px" height="320px" open={buyModal} onClose={() => setBuyModal(false)}>
+            <Modal width="560px" height="320px" open={buyModal} onClose={() => setBuyModal(false)} variant={ModalVariant.transparent}>
                 <div className="modal_buy_header">
                     <img src={cart_icon} alt="cart-icon" width={21} height={21} className="modal_buy_icon" />
                     <label className="modal_header_label">Покупка</label>

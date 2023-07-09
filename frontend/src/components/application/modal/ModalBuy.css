@@ -2,7 +2,7 @@
 
 .modal_buy_header {
     width: 560px;
-    height: 51px;
+    height: 50px;
     background: linear-gradient(180deg, rgba(129, 106, 255, 1), rgba(170, 0, 255, 1) 100%);
     border-radius: 20px 20px 0 0;
     padding: 15px 200px 10px 200px;
@@ -11,17 +11,17 @@
 }
 
 .modal_buy_main {
-    height: 204px;
-    padding: 11px 18px 18px 30px;
+    padding: 11px 18px 15px 30px;
     display: grid;
     grid-template-columns: 300px 1fr;
-    align-items: end
+    align-items: end;
+    box-sizing: border-box;
+    background: #F9F9F9;
 }
 
 .modal_buy_name {
     color: #000;
     font-size: 18px;
-    margin-top: 5px;
 }
 
 .modal_buy_close {
@@ -86,7 +86,6 @@
     background: #BB71F1;
     color: #FFFFFF;
     text-align: center;
-    margin-top: 20px;
     border: none;
     outline: none;
 
