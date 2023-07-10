@@ -111,7 +111,7 @@ function Cards() {
         }
     }, [value]);
 
-    const handleButtonClick = async (countValue: number, e : any) => {
+    const handleButtonClick = async (countValue: number) => {
         const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
         const inputFocus = document.querySelector('.form_modal_input') as HTMLInputElement;
         if (!inputFocus.value && document.activeElement !== inputFocus) {
@@ -141,18 +141,16 @@ function Cards() {
             totalPrice: price,
         }
         {/* post-запрос на отправку бэкенду */}
-        e.preventDefault();
         try {
             const response = await axios.post(
                 'http://localhost:8080/backend/processForm.php',
                 formData,
                 {
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'multipart/form-data',
                     },
                 }
             );
-            console.log(response.data);
             console.log(formData);
             setUserEmail( '')
         } catch (error) {
@@ -178,7 +176,7 @@ function Cards() {
                 <p>Не выбран товар</p>
             </IWarning>
             {/* Модальное окно КУПИТЬ для карточки */}
-            <Modal width="560px" height="320px" open={buyModal} onClose={() => setBuyModal(false)} variant={ModalVariant.transparent}>
+            <Modal width="560px" height="360px" open={buyModal} onClose={() => setBuyModal(false)} variant={ModalVariant.transparent}>
                 <div className="modal_buy_header">
                     <img src={cart_icon} alt="cart-icon" width={21} height={21} className="modal_buy_icon" />
                     <label className="modal_header_label">Покупка</label>
@@ -208,14 +206,14 @@ function Cards() {
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>
                         Закрыть
                     </button>
-                    <button type="submit" className="modal_buy_button-next" onClick={() => handleButtonClick(count, userEmail)}>
+                    <button type="submit" className="modal_buy_button-next" onClick={() => handleButtonClick(count)}>
                         Перейти к оплате
                     </button>
                 </div>
             </Modal>
 
             {/*Модальное окно ОПИСАНИЕ для карточки*/}
-            <Modal width="784px" height="312px" open={descrModal} onClose={() => setDescrModal(false)} padding="33px 72px 8px">
+            <Modal width="784px" height="312px" open={descrModal} onClose={() => setDescrModal(false)} padding="33px 72px 5px">
                 <div className="modal_header_large" style={{ justifyContent: 'center' }}>
                     <label className="modal_header_label_large">Описание</label>
                     <button className="modal_large_close" onClick={() => setDescrModal(false)}>

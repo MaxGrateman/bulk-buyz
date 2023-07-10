@@ -75,7 +75,7 @@ const Header = () => {
                     </div>
                 <EmailForm/>
                 </Modal>
-                <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
+                <Modal width="784px" height="312px" padding="25px 50px 8px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
                     <div className="modal_header_large">
                         <label className="modal_header_label_large">Поддержка</label>
                         <button className='modal_large_close' onClick={() => setSupportModal(false)}><img width={35} height={35} src={cross_icon} alt='black-cross-icon'/></button>

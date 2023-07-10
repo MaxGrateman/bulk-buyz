@@ -11,7 +11,7 @@ const EmailForm = () => {
             // Отправка данных
             const response = await axios.post('http://localhost:8080/backend/email.php',
                 { email: email },
-                { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+                { headers: { 'Content-Type': 'multipart/form-data' } }
             );
             console.log(response.data); // Результат запроса
 

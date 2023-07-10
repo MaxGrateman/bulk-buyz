@@ -38,7 +38,7 @@ const IWarning: React.FC<IWarningProps> = ({ backgroundColor, children, onClose,
 
 
     return (
-        <div className={`warning_container ${open ? 'fadeIn' : 'fadeOut'}`} style={{ backgroundColor, top: warningPosition.top, left: warningPosition.left }} ref={warningRef}>
+        <div className={`warning_container ${open ? 'fadeIn' : 'fadeOut'}`} style={{ backgroundColor, top: warningPosition.top }} ref={warningRef}>
             <div className="warning_wrapper">
                 <img src={alert_icon} alt="alert_icon" width={25} height={25} />
                 {children}
