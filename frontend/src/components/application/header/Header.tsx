@@ -74,10 +74,6 @@ const Header = () => {
                         <button onClick={() => setCartModal(false)}><img className="modal_header_close" src={cross_icon} alt='black-cross-icon' /></button>
                     </div>
                 <EmailForm/>
-                    {/*<div className='modal_wrapper'>
-                        <input placeholder='E-mail, указанный при оплате' className="modal_wrapper_input"/>
-                        <button className="modal_wrapper_button">Продолжить</button>
-                    </div>*/}
                 </Modal>
                 <Modal width="784px" height="312px" padding="25px 20px 8px 50px" open={supportModal} onClose={() => setSupportModal(false)}>
                     <div className="modal_header_large">

@@ -1,5 +1,4 @@
 .cards {
-    min-height: 590px;
     min-width: 1315px;
     background: transparent;
     text-align: center;
@@ -22,9 +21,20 @@
 }
 
 .cards_wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    height: auto;
     margin-top: 84px;
+    overflow: auto;
+}
+
+.cards_scroll {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 150px 50px 150px;
+    justify-content: center;
+}
+
+.card {
+    flex-basis: calc(50% - 20px); /* Половина ширины с отступом */
 }
 

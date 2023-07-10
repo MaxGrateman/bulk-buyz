@@ -1,6 +1,7 @@
 import React, {useEffect, FC, ReactElement, ReactNode, useState} from 'react';
 import "./Modal.css"
 import "./ModalLarge.css"
+import IWarning from "../../interfaces/IWarning/IWarning";
 
 export enum ModalVariant {
     white = 'white',
@@ -72,6 +73,8 @@ const Modal: React.FC<ModalProps>= ({
             >
                 {children}
             </div>
+            {/* Валидационные ворнинги для модального окна покупок */}
+
         </div>
     );
 };

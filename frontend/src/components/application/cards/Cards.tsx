@@ -13,6 +13,7 @@ import cross_icon from "../../../assets/modal-cross.svg";
 import cart_icon from "../../../assets/cart.svg";
 import {ICard, IVariant} from "../../types/types";
 import axios from "axios";
+import nl2br from 'react-nl2br';
 
 
 function Cards() {
@@ -110,7 +111,7 @@ function Cards() {
         }
     }, [value]);
 
-    const handleButtonClick = async (countValue: number) => {
+    const handleButtonClick = async (countValue: number, e : any) => {
         const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
         const inputFocus = document.querySelector('.form_modal_input') as HTMLInputElement;
         if (!inputFocus.value && document.activeElement !== inputFocus) {
@@ -140,6 +141,7 @@ function Cards() {
             totalPrice: price,
         }
         {/* post-запрос на отправку бэкенду */}
+        e.preventDefault();
         try {
             const response = await axios.post(
                 'http://localhost:8080/backend/processForm.php',
@@ -152,6 +154,7 @@ function Cards() {
             );
             console.log(response.data);
             console.log(formData);
+            setUserEmail( '')
         } catch (error) {
             console.error(error);
         }
@@ -164,14 +167,16 @@ function Cards() {
         <label className="cards_label">Смена региона Steam</label>
         <div className="cards_sublabel">Оформи покупку в несколько кликов</div>
         <div className="cards_wrapper">
-            {/* Валидационные ворнинги для модального окна покупок */}
-            <IWarning open={showWarningRegion} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
-                <p>Не выбран регион</p>
-            </IWarning>
+
 
             {/* Карточки товаров */}
-            <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
+            <div className="cards_scroll">
+                <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
+            </div>
 
+            <IWarning open={showWarningRegion} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
+                <p>Не выбран товар</p>
+            </IWarning>
             {/* Модальное окно КУПИТЬ для карточки */}
             <Modal width="560px" height="320px" open={buyModal} onClose={() => setBuyModal(false)} variant={ModalVariant.transparent}>
                 <div className="modal_buy_header">
@@ -203,7 +208,7 @@ function Cards() {
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>
                         Закрыть
                     </button>
-                    <button type="submit" className="modal_buy_button-next" onClick={() => handleButtonClick(count)}>
+                    <button type="submit" className="modal_buy_button-next" onClick={() => handleButtonClick(count, userEmail)}>
                         Перейти к оплате
                     </button>
                 </div>
@@ -218,7 +223,7 @@ function Cards() {
                     </button>
                 </div>
                 <p className="modal_text_large" style={{ textAlign: 'left' }}>
-                    {selectedCard?.description}
+                    {nl2br(selectedCard?.description)}
                 </p>
             </Modal>
         </div>

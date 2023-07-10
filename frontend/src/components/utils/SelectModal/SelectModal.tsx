@@ -31,7 +31,7 @@ export function SelectModal({ value, options, onChange }: SelectModalProps) {
             tabIndex={0}
             className="select_container"
         >
-            <span className="select_value">{selectedValue ? selectedValue.variant : 'Выберите регион'}</span>
+            <span className="select_value">{selectedValue ? selectedValue.variant : 'Выберите товар'}</span>
             <div className={`select_caret ${isOpen ? 'caret_rotate' : ''}`}></div>
             <ul className={`select_options ${isOpen ? 'select_options_show' : ''}`}>
                 {options.map((option, index) => (

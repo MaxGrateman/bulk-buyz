@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import IWarning from "../interfaces/IWarning/IWarning";
 
 const EmailForm = () => {
     const [email, setEmail] = useState(' ')
