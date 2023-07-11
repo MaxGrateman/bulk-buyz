@@ -6,7 +6,6 @@
     border-radius: 25px;
     box-sizing: border-box;
     text-align: left;
-    cursor: pointer;
 
     font-weight: 700;
     font-size: 22px;
@@ -22,6 +21,7 @@
     height: 90px;
     user-select: none;
     text-align: left;
+    cursor: pointer;
 }
 
 .panel {
