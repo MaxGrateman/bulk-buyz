@@ -34,7 +34,7 @@
     user-select: none;
     max-height: 0;
     opacity: 0;
-    transition: all .3s ease;
+    transition: all .6s ease;
 }
 
 .panel_content {
@@ -44,6 +44,7 @@
 .activePanel {
     max-height: 2000px;
     opacity: 1;
+    transition: all 1s ease;
 }
 
 
