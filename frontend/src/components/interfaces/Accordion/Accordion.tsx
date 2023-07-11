@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Accordion.css'
-import plus from '../../../assets/plus-icon.png'
+import plus from '../../../assets/plus-icon.svg'
 
 interface AccordionData {
     title: string;
@@ -20,17 +20,17 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
             newState[index] = !newState[index]; // Инвертируем состояние аккордеона
             return newState;
         });
+
     };
 
     return (
         <div>
             {data.map((accordion, index) => (
-                <div
-                    className={`accordion ${activeIndex[index] ? 'activeBackground' : ''}`}
-                    onClick={() => handleClick(index)}
-                    key={index}
-                >
-                    <div className={`title ${activeIndex[index] ? 'activeTitle' : ''}`}>
+                <div className="accordion" key={index}>
+                    <div
+                        className={`title ${activeIndex[index] ? 'activeTitle' : ''}`}
+                        onClick={() => handleClick(index)}
+                    >
                         {accordion.title}
                         <img
                             src={plus}
@@ -38,7 +38,10 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
                             className={`plus ${activeIndex[index] ? 'activePlus' : ''}`}
                         />
                     </div>
-                    {activeIndex[index] && <div className="panel">{accordion.content}</div>}
+                    <div className={`panel ${activeIndex[index] ? 'activePanel' : ''}`}
+                         onClick={() => handleClick(index)}>
+                        <div className="panel_content">{accordion.content}</div>
+                    </div>
                 </div>
             ))}
         </div>

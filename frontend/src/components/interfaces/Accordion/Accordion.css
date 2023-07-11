@@ -5,7 +5,7 @@
     background: #1F1C1C;
     border-radius: 25px;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
 
     font-weight: 700;
@@ -21,24 +21,29 @@
     align-items: center;
     height: 90px;
     user-select: none;
-}
-
-.activeTitle {
-    color: #1F1C1C;
-}
-
-.activeBackground {
-    background-color: #AAC9F8;
+    text-align: left;
 }
 
 .panel {
-    padding: 0 54px 26px 54px;
-    background-color: #AAC9F8;
-    overflow: hidden;
+    background-color: #1F1C1C;
     text-align: left;
     border-radius: 0 0 25px 25px;
-    color: #1F1C1C;
+
+    font-weight: 600;
+    color: #F2F2F2;
     user-select: none;
+    max-height: 0;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.panel_content {
+    padding: 20px 54px 26px;
+}
+
+.activePanel {
+    max-height: 2000px;
+    opacity: 1;
 }
 
 
@@ -48,10 +53,10 @@
     right: 20px;
     width: 30px;
     height: 30px;
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: transform .2s ease;
 }
 
 .activePlus {
     transform: rotate(45deg);
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: transform .2s ease;
 }
