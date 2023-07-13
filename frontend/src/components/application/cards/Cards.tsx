@@ -165,13 +165,9 @@ function Cards() {
                 }
             );
             console.log(formData);
-            setUserEmail( '')
         } catch (error) {
             console.error(error);
         }
-        setPrice(0)
-        setQuantity(1)
-        setValue(undefined)
     }
 
 
