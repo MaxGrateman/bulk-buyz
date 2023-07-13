@@ -109,6 +109,15 @@ function Cards() {
         setIsChecked(event.target.checked);
     };
 
+    const handleCloseModal = () => {
+        setBuyModal(false)
+        setPrice(0)
+        setQuantity(1)
+        setValue(undefined)
+        setUserEmail('')
+        setIsChecked(false);
+    }
+
     useEffect(() => {
         if (value) {
             setShowWarningRegion(false);
@@ -160,6 +169,9 @@ function Cards() {
         } catch (error) {
             console.error(error);
         }
+        setPrice(0)
+        setQuantity(1)
+        setValue(undefined)
     }
 
 
@@ -180,11 +192,11 @@ function Cards() {
                 <p>Не выбран товар</p>
             </IWarning>
             {/* Модальное окно КУПИТЬ для карточки */}
-            <Modal width="560px" height="360px" open={buyModal} onClose={() => setBuyModal(false)} variant={ModalVariant.transparent}>
+            <Modal width="560px" height="360px" open={buyModal} onClose={handleCloseModal} variant={ModalVariant.transparent}>
                 <div className="modal_buy_header">
                     <img src={cart_icon} alt="cart-icon" width={21} height={21} className="modal_buy_icon" />
                     <p className="modal_header_label">Покупка</p>
-                    <button onClick={() => setBuyModal(false)}>
+                    <button onClick={handleCloseModal}>
                         <img className="modal_buy_close" src={cross_icon} alt="black-cross-icon" />
                     </button>
                 </div>
@@ -207,7 +219,7 @@ function Cards() {
                     <label htmlFor="agree">Я прочитал описание</label>
                 </div>
                 <div className="modal_buy_buttons">
-                    <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>
+                    <button className="modal_buy_button-close" onClick={handleCloseModal}>
                         Закрыть
                     </button>
                     <button type="submit" className="modal_buy_button-next" onClick={handleButtonClick}>
