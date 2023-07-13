@@ -75,7 +75,7 @@ function Cards() {
     const [value, setValue] = useState<SelectModalOption | undefined>();
     const [price, setPrice] = useState<number>(0);
     const [userEmail, setUserEmail] = useState('');
-    const [count, setCount] = useState(1);
+    const [quantity, setQuantity] = useState(1);
 
     const [isChecked, setIsChecked] = useState(false);
     const [showWarningRegion, setShowWarningRegion] = useState(false);
@@ -92,9 +92,13 @@ function Cards() {
         }
     }
 
-    function handleCountChange(updatedPrice: number, newCount: number) {
+    useEffect(() => {
+
+    })
+
+    function handleCountChange(updatedPrice: number, count: number) {
         setPrice(updatedPrice);
-        setCount(newCount);
+        setQuantity(count);
     }
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -111,7 +115,7 @@ function Cards() {
         }
     }, [value]);
 
-    const handleButtonClick = async (countValue: number) => {
+    const handleButtonClick = async ()  => {
         const checkboxLabel = document.querySelector('label[for="agree"]') as HTMLDivElement;
         const inputFocus = document.querySelector('.form_modal_input') as HTMLInputElement;
         if (!inputFocus.value && document.activeElement !== inputFocus) {
@@ -137,7 +141,7 @@ function Cards() {
             email: userEmail,
             selectorValue: value,
             cardName: selectedCard?.name,
-            quantity: count,
+            quantity: quantity,
             totalPrice: price,
         }
         {/* post-запрос на отправку бэкенду */}
@@ -191,7 +195,7 @@ function Cards() {
                      </div>
                     <p className="modal_buy_total">{price} Р</p>
                     <SelectModal options={selectedCard?.variants || []} value={value} onChange={handleChange} />
-                    <CounterModal option={value} onCountChange={handleCountChange} handleButtonClick={handleButtonClick} count={count}/>
+                    <CounterModal option={value} onCountChange={handleCountChange} handleButtonClick={handleButtonClick}/>
                     <EmailModal value={userEmail} onChange={handleEmailChange}/>
                     <input
                         type="checkbox"
@@ -206,7 +210,7 @@ function Cards() {
                     <button className="modal_buy_button-close" onClick={() => setBuyModal(false)}>
                         Закрыть
                     </button>
-                    <button type="submit" className="modal_buy_button-next" onClick={() => handleButtonClick(count)}>
+                    <button type="submit" className="modal_buy_button-next" onClick={handleButtonClick}>
                         Перейти к оплате
                     </button>
                 </div>

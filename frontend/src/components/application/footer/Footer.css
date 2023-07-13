@@ -4,6 +4,7 @@
     background: #1F1C1C;
     display: flex;
     justify-content: center;
+    z-index: 12;
 }
 
 .footer_wrapper {

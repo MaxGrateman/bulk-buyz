@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './CounterModal.css'
 import {SelectModalOption} from "../SelectModal/SelectModal";
 
-const CounterModal = ({ option, onCountChange }: any) => {
+const CounterModal = ({ option, onCountChange, initialPrice }: any) => {
     const [count, setCount] = useState(1);
 
     // Обновление цены при изменении значения счётчика или выбранного варианта
@@ -10,9 +10,10 @@ const CounterModal = ({ option, onCountChange }: any) => {
         if (option) {
             const initialPrice = option.price;
             const updatedPrice = count * initialPrice;
-            onCountChange(updatedPrice);
+            onCountChange(updatedPrice, count);
         }
-    }, [count, option, onCountChange]);
+    }, [count, option, onCountChange, initialPrice]);
+
 
     const increment = () => {
         if (option) {
