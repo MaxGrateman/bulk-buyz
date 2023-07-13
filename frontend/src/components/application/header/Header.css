@@ -118,15 +118,11 @@
 }
 
 .label {
-    font-weight: 800;
-    font-size: 56px;
-    line-height: 68px;
     color: #F2F2F2;
 }
 
 .sublabel {
     font-weight: 700;
-    font-size: 22px;
     line-height: 27px;
     margin-top: 5px;
     color: #F2F2F2;

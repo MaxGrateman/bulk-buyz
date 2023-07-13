@@ -6,20 +6,6 @@
     flex-grow: 1;
 }
 
-.cards_label {
-    font-weight: 700;
-    font-size: 35px;
-    line-height: 43px;
-    color: #000000;
-}
-
-.cards_sublabel {
-    font-weight: 500;
-    font-size: 21px;
-    line-height: 26px;
-    color: #000000;
-}
-
 .cards_wrapper {
     height: auto;
     margin-top: 84px;

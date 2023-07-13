@@ -166,8 +166,8 @@ function Cards() {
 
     return (
     <div className="cards" id="cards">
-        <label className="cards_label">Смена региона Steam</label>
-        <div className="cards_sublabel">Оформи покупку в несколько кликов</div>
+        <h2 className="cards_label">Смена региона Steam</h2>
+        <h6 className="cards_sublabel">Оформи покупку в несколько кликов</h6>
         <div className="cards_wrapper">
 
 
@@ -183,7 +183,7 @@ function Cards() {
             <Modal width="560px" height="360px" open={buyModal} onClose={() => setBuyModal(false)} variant={ModalVariant.transparent}>
                 <div className="modal_buy_header">
                     <img src={cart_icon} alt="cart-icon" width={21} height={21} className="modal_buy_icon" />
-                    <label className="modal_header_label">Покупка</label>
+                    <p className="modal_header_label">Покупка</p>
                     <button onClick={() => setBuyModal(false)}>
                         <img className="modal_buy_close" src={cross_icon} alt="black-cross-icon" />
                     </button>
@@ -219,7 +219,7 @@ function Cards() {
             {/*Модальное окно ОПИСАНИЕ для карточки*/}
             <Modal width="784px" height="312px" open={descrModal} onClose={() => setDescrModal(false)} padding="33px 72px 5px">
                 <div className="modal_header_large" style={{ justifyContent: 'center' }}>
-                    <label className="modal_header_label_large">Описание</label>
+                    <p className="modal_header_label_large">Описание</p>
                     <button className="modal_large_close" onClick={() => setDescrModal(false)}>
                         <img width={35} height={35} src={cross_icon} alt="black-cross-icon" />
                     </button>

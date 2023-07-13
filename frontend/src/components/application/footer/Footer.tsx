@@ -7,7 +7,7 @@ function Footer() {
         <div className="footer">
             <div className="footer_wrapper">
                 <div className="footer_wrapper_left">
-                    <label className="footer_label">Bulkbuyz</label>
+                    <h3 className="footer_label">Bulkbuyz</h3>
                     <p className="footer_underlabel">Cайт, предоставляющий услуги по смене региона в Steam.
                         Смена региона в Steam позволяет пользователям обойти
                         ограничения и купить заблокированные игры, особенно

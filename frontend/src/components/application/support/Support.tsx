@@ -44,8 +44,8 @@ import Accordion from "../../interfaces/Accordion/Accordion";
     return (
         <div className="support" id="support">
             <div className="support_wrapper">
-                <label className="support_label">FAQ</label>
-                <p className="support_underlabel">Часто заводаемые вопросы</p>
+                <h2 className="support_label">FAQ</h2>
+                <h6 className="support_underlabel">Часто заводаемые вопросы</h6>
                 <div>
                     <Accordion data={accordionData}/>
                 </div>

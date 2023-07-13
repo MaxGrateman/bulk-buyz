@@ -47,9 +47,9 @@ const Header = () => {
                     {/* Секция с видео и остальным под нав баром*/}
                     <div className="under-header">
                         <div className="under-header_bb">
-                            <label className="label">Bb shop</label>
-                            <div className="sublabel">Bulkbuyz - открой новые возможности в Steam
-                                сменив регион в нашем магазине</div>
+                            <h1 className="label">Bb shop</h1>
+                            <h5 className="sublabel">Bulkbuyz - открой новые возможности в Steam
+                                сменив регион в нашем магазине</h5>
                             <Link to="cards" spy={true} smooth={true} duration={200}>
                                 <button className="under-header_button">
                                     <span className="circle" aria-hidden="true">
@@ -70,7 +70,7 @@ const Header = () => {
                 <Modal open={cartModal} onClose={() => setCartModal(false)} width="354px" height="172px">
                     <div className="modal_header_cart">
                         <img src={cart_icon} alt='cart-icon' width={24} height={24}/>
-                        <label className="modal_header_label">История покупок</label>
+                        <p className="modal_header_label">История покупок</p>
                         <button onClick={() => setCartModal(false)}><img className="modal_header_close" src={cross_icon} alt='black-cross-icon' /></button>
                     </div>
                 <EmailForm/>
