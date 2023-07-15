@@ -164,9 +164,18 @@ function Cards() {
                     },
                 }
             );
-            console.log(formData);
+
+            // Добавляем проверку на успешный статус ответа (200)
+            if (response.status === 200) {
+                // Перенаправляем пользователя на указанный URL
+                window.location.href = response.data.redirectUrl;
+            } else {
+                // Обрабатываем ошибку в случае некорректного статуса ответа
+                console.error('Ошибка при выполнении запроса:', response);
+            }
         } catch (error) {
-            console.error(error);
+            // Обрабатываем ошибку в случае сетевой ошибки или ошибки на сервере
+            console.error('Ошибка при выполнении запроса:', error);
         }
     }
 

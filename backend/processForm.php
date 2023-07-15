@@ -9,17 +9,19 @@ $database->connect();
 $connection = $database->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    $amount = $_POST['quantity'];
-    $payment = $_POST['totalPrice'];
+    $amount = $_POST['totalPrice'];
+    $payment = sprintf('%d%d', time(), rand(1, 10));
     $shop = '6288';
     $currency = 'RUB';
-    $desc = 'Test (don\'t pay)';
+    $desc = $_POST['cardName'] . " в количестве: " . $_POST['quantity'];
     $secret = 'dee2bfba085c4bd05e951e5d7162586c';
     $array = array($amount, $payment, $shop, $currency, $desc, $secret);
     $sign = md5(implode('|', $array));
 
-    header("Location: https://payok.io/pay?amount=$amount&payment=$payment&desc=$desc&shop=$shop&currency=$currency&sign=$sign");
-    die();
+    $redirectUrl = "https://payok.io/pay?amount=$amount&payment=$payment&desc=$desc&shop=$shop&currency=$currency&sign=$sign";
+
+    header('Content-Type: application/json');
+    echo json_encode(['redirectUrl' => $redirectUrl]);
 } else {
     http_response_code(400);
 }
