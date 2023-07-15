@@ -36,7 +36,7 @@ const CounterModal = ({ option, onCountChange, initialPrice }: any) => {
             <button
                 className="modal_counter_button"
                 onClick={() => setCount(prevCount => Math.max(prevCount - 1, 1))}
-                style={{ background: '#F0F0F0', borderRadius: '10px 0px 0px 10px' }}
+                style={{ background: 'rgb(215 215 215)', borderRadius: '10px 0px 0px 10px' }}
                 disabled={!option}
             >
                 -
