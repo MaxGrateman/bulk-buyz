@@ -5,6 +5,7 @@
     background: #BB71F1;
     color: #FFFFFF;
     margin-top: 20px;
+    cursor: pointer;
     border: none;
     outline: none;
     display: flex;
@@ -35,7 +36,6 @@
 
 .select_options {
     position: absolute;
-    padding: 5px;
     border-radius: 15px;
     background: #BB71F1;
     list-style: none;
@@ -43,18 +43,13 @@
     outline: none;
     width: 209px;
     max-height: 85px;
-    display: none;
+    padding: 0;
     left: 25px;
-    top: 155px;
+    top: 150px;
+    display: none;
     z-index: 100;
+    text-align: center;
     box-sizing: border-box;
-}
-
-.select_divider {
-    width: 195px;
-    height: 1px;
-    background-color: white;
-    margin: 0 auto;
 }
 
 .select_options_show {
@@ -62,7 +57,22 @@
 }
 
 .select_option {
-    padding: 3px;
+    padding: 5px;
     cursor: pointer;
     font-size: 14px;
+}
+
+.selected_option {
+    padding: 5px;
+    color: #BB71F1;
+    background: #FFFFFF;
+    border-radius: 15px;
+    font-size: 16px;
+    border: 2px solid #BB71F1;
+}
+
+.select_highlight {
+    color: #BB71F1;
+    background: #FFFFFF;
+    border-radius: 15px;
 }
