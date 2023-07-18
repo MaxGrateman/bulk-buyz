@@ -39,7 +39,7 @@ export function SelectModal({ value, options, onChange }: SelectModalProps) {
             <div className={`select_caret ${isOpen ? 'caret_rotate' : ''}`}></div>
             <ul className={`select_options ${isOpen ? 'select_options_show' : ''}`}>
                 {options.map((option, index) => (
-                    <React.Fragment key={option.value}>
+                    <React.Fragment key={option.id}>
                         <li
                             onClick={(e) => {
                                 e.stopPropagation();
