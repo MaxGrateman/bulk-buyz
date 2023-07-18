@@ -166,7 +166,7 @@ function Cards() {
             );
 
             // Добавляем проверку на успешный статус ответа (200)
-            if (response.status === 200) {
+            if (response.status === 200 && value && isChecked) {
                 // Перенаправляем пользователя на указанный URL
                 window.location.href = response.data.redirectUrl;
             } else {
