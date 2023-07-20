@@ -46,7 +46,7 @@
     padding: 0;
     left: 25px;
     top: 150px;
-    display: none;
+    display: block;
     z-index: 100;
     text-align: center;
     box-sizing: border-box;
@@ -62,17 +62,9 @@
     font-size: 14px;
 }
 
-.selected_option {
-    padding: 5px;
-    color: #BB71F1;
-    background: #FFFFFF;
-    border-radius: 15px;
-    font-size: 16px;
-    border: 2px solid #BB71F1;
-}
-
-.select_highlight {
-    color: #BB71F1;
-    background: #FFFFFF;
-    border-radius: 15px;
+.select_divider {
+    width: 195px;
+    height: 1px;
+    background-color: white;
+    margin: 0 auto;
 }

@@ -1,7 +1,4 @@
 import './Footer.css'
-import {Link} from "react-scroll";
-import vk_icon from '../../../assets/vk-icon.svg'
-import telegram_icon from '../../../assets/telegram-icon.svg'
 
 function Footer() {
 
@@ -9,7 +6,7 @@ function Footer() {
         <div className="footer">
             <div className="footer_wrapper">
                 <div className="footer_wrapper_left">
-                    <h3 className="footer_label">Bulkbuyz</h3>
+                    <p className="footer_label">Bulkbuyz</p>
                     <p className="footer_underlabel">Cайт, предоставляющий услуги по смене региона в Steam.
                         Смена региона в Steam позволяет пользователям обойти
                         ограничения и купить заблокированные игры, особенно

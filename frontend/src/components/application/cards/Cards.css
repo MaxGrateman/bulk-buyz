@@ -12,6 +12,16 @@
     overflow: auto;
 }
 
+.cards_label {
+    color: #000000;
+}
+
+.cards_sublabel {
+    font-weight: 500;
+    font-size: 21px;
+    color: #000000;
+}
+
 .cards_scroll {
     display: flex;
     flex-wrap: wrap;

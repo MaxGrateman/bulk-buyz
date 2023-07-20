@@ -35,8 +35,8 @@ function Reviews() {
     return(
         <section className="reviews" id="reviews">
             <div className="reviews_wrapper">
-                <h2 className="reviews_label">Отзывы</h2>
-                <h6 className="reviews_under_label">Отзывы о нас</h6>
+                <h3 className="reviews_label">Отзывы</h3>
+                <p className="reviews_under_label">Отзывы о нас</p>
                 <div className='reviews_columns'>
                     <div className="reviews_column">
                         <a href='https://plati.io/seller/wexenone/1097528/' className="reviews_column_links">Отзывы на площадке <u>Plati.market</u></a>

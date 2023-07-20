@@ -26,6 +26,12 @@
     text-align: left;
 }
 
+.footer_label {
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 35px;
+}
+
 .footer_underlabel {
     font-weight: 500;
     font-size: 16px;

@@ -18,15 +18,10 @@ type SelectModalProps = {
 export function SelectModal({ value, options, onChange }: SelectModalProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState<SelectModalOption | undefined>(value);
-    const [highlightedIndex, setHighlightedIndex] = useState(0)
 
     function selectOption(option: SelectModalOption) {
         setSelectedValue(option);
         if (option !== value) onChange(option);
-    }
-
-    function isSelected(option: SelectModalOption) {
-        return option === value
     }
     return (
         <div
@@ -46,11 +41,11 @@ export function SelectModal({ value, options, onChange }: SelectModalProps) {
                                 selectOption(option);
                                 setIsOpen(false);
                             }}
-                            onMouseEnter={() => setHighlightedIndex(index)}
-                            className={`select_option ${isSelected(option) ? 'selected_option' : ''} ${index === highlightedIndex ? 'select_highlight' : ''}`}
+                            className="select_option"
                         >
                             {option.variant}
                         </li>
+                        {index !== options.length - 1 && <li className="select_divider"></li>}
                     </React.Fragment>
                 ))}
             </ul>

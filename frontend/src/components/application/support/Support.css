@@ -16,4 +16,8 @@
     flex-direction: column;
 }
 
+.support_underlabel {
+    font-size: 22px;
+    font-weight: 500;
+}
 

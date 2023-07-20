@@ -7,6 +7,7 @@ import React, {useState} from "react";
 import EmailForm from "../../utils/EmailForm";
 import './Header.css';
 import Modal from "../modal/Modal";
+import YouTubeVideoFacade from "../../utils/YouTubeVideoFacade";
 
 const Header = () => {
     const [cartModal, setCartModal] = useState(false)
@@ -48,8 +49,8 @@ const Header = () => {
                     <div className="under-header">
                         <div className="under-header_bb">
                             <h1 className="label">Bb shop</h1>
-                            <h5 className="sublabel">Bulkbuyz - открой новые возможности в Steam
-                                сменив регион в нашем магазине</h5>
+                            <h2 className="sublabel">Bulkbuyz - открой новые возможности в Steam
+                                сменив регион в нашем магазине</h2>
                             <Link to="cards" spy={true} smooth={true} duration={200}>
                                 <button className="under-header_button">
                                     <span className="circle" aria-hidden="true">
@@ -60,10 +61,7 @@ const Header = () => {
                             </Link>
                         </div>
                         <div className="under-header_video">
-                            <iframe width="486" height="266" src="https://www.youtube.com/embed/-iZxviiMlkU"
-                                    title="КАК СМЕНИТЬ РЕГИОН В СТИМЕ НА КАЗАХСТАН САМОСТОЯТЕЛЬНО" frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen></iframe>
+                            <YouTubeVideoFacade width={486} height={266} videoId="-iZxviiMlkU" />
                         </div>
                     </div>
                 </div>

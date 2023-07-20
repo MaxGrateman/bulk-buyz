@@ -183,8 +183,8 @@ function Cards() {
 
     return (
     <div className="cards" id="cards">
-        <h2 className="cards_label">Смена региона Steam</h2>
-        <h6 className="cards_sublabel">Оформи покупку в несколько кликов</h6>
+        <h3 className="cards_label">Смена региона Steam</h3>
+        <p className="cards_sublabel">Оформи покупку в несколько кликов</p>
         <div className="cards_wrapper">
 
 
