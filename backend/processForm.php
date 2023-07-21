@@ -10,7 +10,7 @@ $connection = $database->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     $amount = $_POST['totalPrice'];
-    $payment = sprintf('%d%d', time(), rand(1, 10));
+    $payment = substr(hash('sha256', openssl_random_pseudo_bytes(20)), '-10');
     $shop = '6288';
     $currency = 'RUB';
     $desc = $_POST['cardName'] . " в количестве: " . $_POST['quantity'];
@@ -25,20 +25,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['email'], FILTER_
 } else {
     http_response_code(400);
 }
-
-//  if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-//        $query = "INSERT INTO users (email, name, variant, price, time) VALUES (:email, 'Test', :selectedProduct, '228', NOW())";
-//        $stmt = $database->prepare($query);
-//        $stmt->bindParam(':email', $email);
-//        $stmt->bindParam(':selectedProduct', $selectedProduct);
-//        $stmt->execute();
-//        $count = $stmt->rowCount();
-//        if ($count > 0) {
-//            echo "E-mail записан в БД";
-//        } else {
-//            echo "Произошла ошибка при записи в БД";
-//        }
-//    } else {
-//        echo 'Некорректный адрес электронной почты';
-//    }
-//}
