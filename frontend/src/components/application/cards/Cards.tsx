@@ -154,28 +154,30 @@ function Cards() {
             totalPrice: price,
         }
         {/* post-запрос на отправку бэкенду */}
-        try {
-            const response = await axios.post(
-                'http://localhost:8080/backend/processForm.php',
-                formData,
-                {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    },
-                }
-            );
+        if (value && isChecked) {
+            try {
+                const response = await axios.post(
+                    'http://localhost:8080/backend/processForm.php',
+                    formData,
+                    {
+                        headers: {
+                            'Content-Type': 'multipart/form-data',
+                        },
+                    }
+                );
 
-            // Добавляем проверку на успешный статус ответа (200)
-            if (response.status === 200 && value && isChecked) {
-                // Перенаправляем пользователя на указанный URL
-                window.location.href = response.data.redirectUrl;
-            } else {
-                // Обрабатываем ошибку в случае некорректного статуса ответа
-                console.error('Ошибка при выполнении запроса:', response);
+                // Добавляем проверку на успешный статус ответа (200)
+                if (response.status === 200) {
+                    // Перенаправляем пользователя на указанный URL
+                    window.location.href = response.data.redirectUrl;
+                } else {
+                    // Обрабатываем ошибку в случае некорректного статуса ответа
+                    console.error('Ошибка при выполнении запроса:', response);
+                }
+            } catch (error) {
+                // Обрабатываем ошибку в случае сетевой ошибки или ошибки на сервере
+                console.error('Ошибка при выполнении запроса:', error);
             }
-        } catch (error) {
-            // Обрабатываем ошибку в случае сетевой ошибки или ошибки на сервере
-            console.error('Ошибка при выполнении запроса:', error);
         }
     }
 
