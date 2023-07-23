@@ -20,3 +20,7 @@ export interface ICard {
     description: string;
 }
 
+export interface window {
+    onYouTubeIframeAPIReady?: () => void;
+}
+

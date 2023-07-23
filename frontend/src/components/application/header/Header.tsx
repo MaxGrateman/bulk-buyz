@@ -7,7 +7,7 @@ import React, {useState} from "react";
 import EmailForm from "../../utils/EmailForm";
 import './Header.css';
 import Modal from "../modal/Modal";
-import YouTubeVideoFacade from "../../utils/YouTubeVideoFacade";
+import YouTubeVideoFacade from "../../utils/YouTubeVideo";
 
 const Header = () => {
     const [cartModal, setCartModal] = useState(false)
@@ -61,7 +61,7 @@ const Header = () => {
                             </Link>
                         </div>
                         <div className="under-header_video">
-                            <YouTubeVideoFacade width={486} height={266} videoId="-iZxviiMlkU" />
+                            <YouTubeVideoFacade videoId="-iZxviiMlkU" />
                         </div>
                     </div>
                 </div>
