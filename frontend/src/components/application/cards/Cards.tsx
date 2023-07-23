@@ -154,7 +154,7 @@ function Cards() {
             totalPrice: price,
         }
         {/* post-запрос на отправку бэкенду */}
-        if (value && isChecked) {
+        if (value && isChecked && userEmail) {
             try {
                 const response = await axios.post(
                     'http://localhost:8080/backend/processForm.php',
@@ -165,7 +165,6 @@ function Cards() {
                         },
                     }
                 );
-
                 // Добавляем проверку на успешный статус ответа (200)
                 if (response.status === 200) {
                     // Перенаправляем пользователя на указанный URL
