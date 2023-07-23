@@ -9,7 +9,7 @@
 }
 
 .support_wrapper{
-    min-width: 1315px;
+    width: 1315px;
     padding: 83px 0 68px 0;
     display: flex;
     align-items: center;
