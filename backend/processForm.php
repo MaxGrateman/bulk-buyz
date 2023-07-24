@@ -10,6 +10,7 @@ $connection = $database->getConnection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     $amount = $_POST['totalPrice'];
+    $email = $_POST['email'];
     $payment = substr(hash('sha256', openssl_random_pseudo_bytes(20)), '-10');
     $shop = '6288';
     $currency = 'RUB';
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_var($_POST['email'], FILTER_
     $array = array($amount, $payment, $shop, $currency, $desc, $secret);
     $sign = md5(implode('|', $array));
 
-    $redirectUrl = "https://payok.io/pay?amount=$amount&payment=$payment&desc=$desc&shop=$shop&currency=$currency&sign=$sign";
+    $redirectUrl = "https://payok.io/pay?amount=$amount&payment=$payment&desc=$desc&shop=$shop&currency=$currency&sign=$sign&email=$email";
 
     header('Content-Type: application/json');
     echo json_encode(['redirectUrl' => $redirectUrl]);
