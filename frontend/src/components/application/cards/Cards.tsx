@@ -79,8 +79,10 @@ function Cards() {
 
     const [isChecked, setIsChecked] = useState(false);
     const [showWarningRegion, setShowWarningRegion] = useState(false);
-    const timerRef = useRef<number | null>(null);
-
+    const [showWarningEmail, setShowWarningEmail] = useState(false);
+    const RegionTimerRef = useRef<number | null>(null);
+    const EmailTimerRef = useRef<number | null>(null);
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
     /* функция которая отрабатывает выборанный селектор и кидает его цену */
     function handleChange(option: SelectModalOption | undefined) {
@@ -109,6 +111,7 @@ function Cards() {
         setIsChecked(event.target.checked);
     };
 
+
     const handleCloseModal = () => {
         setBuyModal(false)
         setPrice(0)
@@ -132,10 +135,10 @@ function Cards() {
         }
         if (!value) {
             setShowWarningRegion(true);
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
+            if (RegionTimerRef.current) {
+                clearTimeout(RegionTimerRef.current);
             }
-            timerRef.current = window.setTimeout(() => {
+            RegionTimerRef.current = window.setTimeout(() => {
                 setShowWarningRegion(false);
             }, 3000);
         }
@@ -143,6 +146,17 @@ function Cards() {
             checkboxLabel.style.color = 'red';
         } else {
             checkboxLabel.style.color = 'black';
+        }
+
+        if (!userEmail || !emailRegex.test(userEmail)) {
+            setShowWarningEmail(true);
+            if (EmailTimerRef.current) {
+                clearTimeout(EmailTimerRef.current);
+            }
+            EmailTimerRef.current = window.setTimeout(() => {
+                setShowWarningEmail(false);
+            }, 3000);
+            return;
         }
 
         {/*Формируем информацию для отправки*/}
@@ -154,7 +168,7 @@ function Cards() {
             totalPrice: price,
         }
         {/* post-запрос на отправку бэкенду */}
-        if (value && isChecked && userEmail) {
+        if (value && isChecked) {
             try {
                 const response = await axios.post(
                     'http://localhost:8080/backend/processForm.php',
@@ -188,15 +202,17 @@ function Cards() {
         <p className="cards_sublabel">Оформи покупку в несколько кликов</p>
         <div className="cards_wrapper">
 
+            {/* карточки товаров */}
+            <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
 
-            {/* Карточки товаров */}
-            <div className="cards_scroll">
-                <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
-            </div>
-
+            {/* Окна ворнингов при неудачном заполение полей */}
             <IWarning open={showWarningRegion} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
                 <p>Не выбран товар</p>
             </IWarning>
+            <IWarning open={showWarningEmail} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
+                <p>Не действительный e-mail</p>
+            </IWarning>
+
             {/* Модальное окно КУПИТЬ для карточки */}
             <Modal width="560px" height="360px" open={buyModal} onClose={handleCloseModal} variant={ModalVariant.transparent}>
                 <div className="modal_buy_header">
