@@ -14,24 +14,6 @@
     box-sizing: border-box;
 }
 
-@media(max-width: 1315px) {
-    .container {
-        max-width: 970px;
-    }
-}
-
-@media(max-width: 992px) {
-    .container {
-        max-width: 750px;
-    }
-}
-
-@media(max-width: 767px) {
-    .container {
-        max-width: none;
-    }
-}
-
 .header_navigation {
     background: transparent;
     max-width: 1315px;
@@ -229,9 +211,4 @@
 
 .button-text:hover {
     color: white;
-}
-
-.under-header_video {
-    min-width: 486px;
-    min-height: 266px;
 }

@@ -15,26 +15,37 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ videoId }) => {
         };
 
         const initializeYouTubePlayer = () => {
-            player = new window.YT.Player(iframeRef.current!, {
-                playerVars: {
-                    autoplay: 0,
-                },
-                events: {
-                    onReady: onPlayerReady,
-                },
-            });
-        };
-
-        if (!window.YT) {
             const tag = document.createElement("script");
             tag.src = "https://www.youtube.com/iframe_api";
             const firstScriptTag = document.getElementsByTagName("script")[0];
             firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
 
-            tag.onload = initializeYouTubePlayer;
+            // Используем событие onload для обработки загрузки скрипта
+            tag.onload = () => {
+                player = new window.YT.Player(iframeRef.current!, {
+                    playerVars: {
+                        autoplay: 0,
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                    },
+                });
+            };
+        };
+
+        if (!window.YT) {
+            initializeYouTubePlayer();
         } else {
+            // Если библиотека уже загружена, инициализируем сразу
             initializeYouTubePlayer();
         }
+
+        return () => {
+            // При размонтировании компонента не забываем очистить объект плеера
+            if (player) {
+                player.destroy();
+            }
+        };
     }, [videoId]);
 
     return (
@@ -53,6 +64,8 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ videoId }) => {
 };
 
 export default YouTubeVideo;
+
+
 
 
 

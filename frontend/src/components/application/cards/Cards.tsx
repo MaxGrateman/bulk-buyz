@@ -203,7 +203,10 @@ function Cards() {
         <div className="cards_wrapper">
 
             {/* карточки товаров */}
-            <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
+            <div className="cards_scroll">
+                <CardList cards={cards} handleBuyClick={handleBuyClick} handleDescrClick={handleDescrClick}/>
+            </div>
+
 
             {/* Окна ворнингов при неудачном заполение полей */}
             <IWarning open={showWarningRegion} backgroundColor="rgba(232, 70, 70)" onClose={() => setShowWarningRegion(false)}>
