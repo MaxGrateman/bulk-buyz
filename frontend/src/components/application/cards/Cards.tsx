@@ -230,7 +230,7 @@ function Cards() {
                          <img src={selectedCard?.img} alt="small-icon-steam" width={39} height={39} />
                          <p className="modal_buy_name">{selectedCard?.name}</p>
                      </div>
-                    <p className="modal_buy_total">{price} Р</p>
+                    <p className="modal_buy_total">{price} ₽</p>
                     <SelectModal options={selectedCard?.variants || []} value={value} onChange={handleChange} />
                     <CounterModal option={value} onCountChange={handleCountChange} handleButtonClick={handleButtonClick}/>
                     <EmailModal value={userEmail} onChange={handleEmailChange}/>

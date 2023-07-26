@@ -43,7 +43,7 @@ export function SelectModal({ value, options, onChange }: SelectModalProps) {
                             }}
                             className="select_option"
                         >
-                            {option.variant}
+                            <p className="select_option_price">{option.price}₽</p>{option.variant}
                         </li>
                         {index !== options.length - 1 && <li className="select_divider"></li>}
                     </React.Fragment>
