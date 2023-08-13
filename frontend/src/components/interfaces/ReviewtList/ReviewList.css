@@ -35,3 +35,13 @@
     font-size: 22px;
     color: #000000;
 }
+
+.comment_more {
+    font-weight: 500;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.comment_more:hover {
+    text-decoration: underline;
+}
