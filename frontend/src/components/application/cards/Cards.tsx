@@ -47,7 +47,7 @@ function Cards() {
     const fetchCards = async () => {
         try {
             const response = await axios.get<ICard[]>(
-                `http://localhost:8080/backend/products.php`,
+                `http://localhost:8080/products.php`,
                 {
                     responseType: 'json',
                     headers: {
@@ -55,7 +55,7 @@ function Cards() {
                     },
                 }
             );
-            const cardsData = response.data;
+            const cardsData = response.data;// Log the response data to verify its structure
             setCards(cardsData || []);
             if (cardsData && cardsData.length > 0) {
                 setSelectedCard(cardsData[0]);
@@ -171,7 +171,7 @@ function Cards() {
         if (value && isChecked) {
             try {
                 const response = await axios.post(
-                    'http://localhost:8080/backend/processForm.php',
+                    'https://localhost:8080/processForm.php',
                     formData,
                     {
                         headers: {

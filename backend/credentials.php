@@ -1,7 +1,7 @@
 <?php
 
-$username = 'ttddffxz_main';
-$password = 'i4y*GoPYz*6fVWbZ*ubYuxa6';
-$db = 'ttddffxz_main';
-$host = 'ttddffxz.beget.tech';
+$username = 'sql7717546';
+$password = '4MugWMKhBV';
+$db = 'sql7717546';
+$host = 'sql7.freesqldatabase.com';
 $dsn = 'mysql:host=' . $host . ';dbname=' . $db . ';charset=utf8mb4;';

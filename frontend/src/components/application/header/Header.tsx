@@ -21,7 +21,7 @@ const Header = () => {
             <div className="header">
                 <div className="container">
                     <nav className="header_navigation">
-                        <a href='http://localhost:5173/' className="navigation_logo"></a>
+                        <a href='https://bulkbuyz.ru' className="navigation_logo"></a>
 
                         {/*Модальное окно поддержки*/}
                         <button className="navigation_link" onClick={() => setSupportModal(true)}>Поддержка</button>

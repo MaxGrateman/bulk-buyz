@@ -9,7 +9,7 @@ const EmailForm = () => {
         axios.defaults.headers.post['Content-Type'] = 'application/json'
         try {
             // Отправка данных
-            const response = await axios.post('http://localhost:8080/backend/email.php',
+            const response = await axios.post('https://bulkbuyz.ru/email.php',
                 { email: email },
                 { headers: { 'Content-Type': 'multipart/form-data' } }
             );
