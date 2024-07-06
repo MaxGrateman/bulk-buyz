@@ -3,12 +3,12 @@ header("Access-Control-Allow-Origin: https://bulk-buyz.netlify.app");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-header("Content-Type: application/json");
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     header("HTTP/1.1 200 OK");
     exit();
 }
+
+header("Content-Type: application/json");
 
 require_once __DIR__ . '/credentials.php';
 require_once __DIR__ . '/DatabaseConnection.php';
