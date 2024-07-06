@@ -5,6 +5,11 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 header("Content-Type: application/json");
 
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header("HTTP/1.1 200 OK");
+    exit();
+}
+
 require_once __DIR__ . '/credentials.php';
 require_once __DIR__ . '/DatabaseConnection.php';
 

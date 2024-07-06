@@ -26,7 +26,6 @@ function Footer() {
                             </svg>
                         </a>
                     </nav>
-                    <div className="footer_credits">© Created by Max Astakhov & Sergey Sidorov</div>
                 </div>
             </div>
         </div>
