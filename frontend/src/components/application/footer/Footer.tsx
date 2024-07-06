@@ -10,7 +10,7 @@ function Footer() {
                     <p className="footer_underlabel">Cайт, предоставляющий услуги по смене региона в Steam.
                         Смена региона в Steam позволяет пользователям обойти
                         ограничения и купить заблокированные игры, особенно
-                        актуально для пользователей из России. </p>
+                        актуально для пользователей из России.  </p>
                     <p className="footer_pin">© 2023 bulkbuyz.ru</p>
                 </div>
                 <div className="footer_wrapper_right">
