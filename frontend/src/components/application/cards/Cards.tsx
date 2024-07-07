@@ -47,7 +47,7 @@ function Cards() {
     const fetchCards = async () => {
         try {
             const response = await axios.get<ICard[]>(
-                `http://localhost:8080/products.php`,
+                `https://sql7.freesqldatabase.com`,
                 {
                     responseType: 'json',
                     headers: {
