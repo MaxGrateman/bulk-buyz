@@ -1,6 +1,6 @@
 [[redirects]]
-from = "/*"
-to = "/"
+from = '/api/*'
+to = '/.netlify/functions/server/:splat'
 status = 200
 
 [[headers]]
@@ -15,5 +15,6 @@ publish = "frontend/dist"
 command = "npm run build"
 
 [dev]
+port = 8080
 command = "php -S localhost:8080 -t backend"
 
