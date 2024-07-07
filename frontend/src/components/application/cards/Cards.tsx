@@ -47,7 +47,7 @@ function Cards() {
     const fetchCards = async () => {
         try {
             const response = await axios.get<ICard[]>(
-                `https://bulk-buyz.netlify.app/backend/products.php`,
+                `http://localhost:8080/products.php`,
                 {
                     responseType: 'json',
                     headers: {
