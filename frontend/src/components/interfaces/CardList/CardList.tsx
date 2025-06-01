@@ -17,7 +17,7 @@ const CardList: FC<CardListProps> = ({ cards, handleBuyClick, handleDescrClick} 
                 <div key={card.id} className="card_container" >
                     <p className="card_label">{card.name}</p>
                     <div className="card_content">
-                        <img src={card.img} alt="product-image" className="card_image" draggable="false"/>
+                        <img src={`http://${import.meta.env.VITE_API_URL}${card.img}${card.img}`} alt="product-image" className="card_image" draggable="false"/>
                         <div className="card_button_wrapper">
                             <button className="card_button" onClick={() => handleDescrClick(card)}>Описание</button>
                             <button className="card_button" onClick={() => handleBuyClick(card)}>Купить</button>

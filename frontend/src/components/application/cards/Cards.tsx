@@ -47,7 +47,7 @@ function Cards() {
     const fetchCards = async () => {
         try {
             const response = await axios.get<ICard[]>(
-                `https://sql7.freesqldatabase.com`,
+                `http://localhost:5000/api/products`,
                 {
                     responseType: 'json',
                     headers: {
@@ -55,7 +55,7 @@ function Cards() {
                     },
                 }
             );
-            const cardsData = response.data;// Log the response data to verify its structure
+            const cardsData = response.data;
             setCards(cardsData || []);
             if (cardsData && cardsData.length > 0) {
                 setSelectedCard(cardsData[0]);
