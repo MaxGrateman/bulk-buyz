@@ -47,7 +47,7 @@ function Cards() {
     const fetchCards = async () => {
         try {
             const response = await axios.get<ICard[]>(
-                `http://localhost:5000/api/products`,
+                `http://89.169.0.141:5000/api/products`,
                 {
                     responseType: 'json',
                     headers: {
