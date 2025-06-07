@@ -47,7 +47,7 @@ function Cards() {
     const fetchCards = async () => {
         try {
             const response = await axios.get<ICard[]>(
-                `http://89.169.0.141:5000/api/products`,
+                `http://89.169.0.141/api/products`,
                 {
                     responseType: 'json',
                     headers: {
@@ -171,7 +171,7 @@ function Cards() {
         if (value && isChecked) {
             try {
                 const response = await axios.post(
-                    'http://localhost:8080/processForm.php',
+                    '',
                     formData,
                     {
                         headers: {
